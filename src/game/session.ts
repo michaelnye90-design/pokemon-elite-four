@@ -45,7 +45,7 @@ export class RunSession {
     readonly rules: Ruleset,
     readonly setup: RunSetup,
     cart: Cart,
-    readonly options: { includeChampion: boolean },
+    readonly options: { includeChampion: boolean; playerName?: string },
   ) {
     this.trainers = rules.data.elite4.trainers.filter((t) => !t.optional || options.includeChampion);
     this.party = setup.team.map((set) => ({ set: { ...set, moves: [...set.moves] } }));
@@ -79,7 +79,7 @@ export class RunSession {
       seed: battleSeed(this.setup.seed, this.fightIndex),
       p1: this.party,
       p2: trainerParty(this.rules.data.elite4, this.trainerTeam(trainer)),
-      names: { p1: 'You', p2: `${trainer.title} ${trainer.name}` },
+      names: { p1: this.options.playerName ?? 'You', p2: `${trainer.title} ${trainer.name}` },
     });
     const itemsById = Object.fromEntries(this.rules.data.items.items.map((i) => [i.id, i as BattleItem]));
     this.opponent = new AIController(strategyFor(this.tier), createRng(this.setup.seed, `ai-fight${this.fightIndex}`), {

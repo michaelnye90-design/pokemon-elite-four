@@ -1,4 +1,6 @@
+import '@fontsource/press-start-2p/400.css';
 import './style.css';
+import './ui/scene.css';
 import { LEGAL_NOTICE } from './legal';
 import { gen1 } from './rules/gen1';
 import { App } from './ui/app';

@@ -1,340 +1,276 @@
-// The battle screen, laid out like Pokémon Showdown: the field with both
-// Pokémon, HP bars and party balls; move, switch and bag menus; and the log.
-// Each turn's events are played back one by one so HP bars drain in order.
+// The battle screen, played like the Gen 1 games: the trainer slides in,
+// Pokémon are sent out, messages type out one at a time in the text box,
+// and you pick from FIGHT / PKMN / ITEM / RUN.
 
+import { Sprites } from '@pkmn/img';
 import { DIFFICULTY } from '../../config/difficulty';
-import type { EngineBattle } from '../../engine/battle';
+import type { Action, EngineBattle, LegalActions } from '../../engine/battle';
 import type { BattleItem } from '../../engine/items';
 import type { App, Screen } from '../app';
-import { delay, esc, hpBar, statusBadge } from '../dom';
-import { formatLog, type LogEvent, type SideId } from '../log';
-import { icon, sprite } from '../sprites';
-
-interface ActiveView {
-  species: string;
-  level: number;
-  hp: number;
-  maxhp: number;
-  status: string;
-}
-
-type Menu = 'main' | 'switch' | 'bag' | 'target';
+import { classicBeats, type ClassicContext } from '../classic';
+import { esc } from '../dom';
+import { BattleScene, type ListOption, type MonView, type TextSpeed } from '../scene';
+import { saveSettings } from '../settings';
 
 export interface BattleView {
-  active: Partial<Record<SideId, ActiveView>>;
-  log: { text: string; tone?: LogEvent['tone']; turn?: number }[];
-  /** How much of the simulator's log has been shown. */
-  logIndex: number;
-  animating: boolean;
-  menu: Menu;
-  /** Bag item waiting for a target. */
-  item: BattleItem | null;
+  started: boolean;
+  scene: BattleScene | null;
+  /** Remembered menu positions, like the games. */
+  mainCursor: number;
+  moveCursor: number;
 }
 
-const TEXT_DELAY = 550;
-const QUICK_DELAY = 250;
+/** Sets up the view for a fight that has just started. */
+export function startBattleView(_app: App): BattleView {
+  return { started: false, scene: null, mainCursor: 0, moveCursor: 0 };
+}
+
+const upper = (s: string) => s.toUpperCase();
 
 function battle(app: App): EngineBattle {
   return app.session!.battle!;
 }
 
-function activeFromEngine(b: EngineBattle, side: SideId): ActiveView {
+function viewOf(b: EngineBattle, side: 'p1' | 'p2'): MonView {
   const p = b.active(side);
-  return { species: p.species.name, level: p.level, hp: p.hp, maxhp: p.maxhp, status: p.status === 'fnt' ? '' : p.status };
+  return { species: p.species.name, name: upper(p.species.name), level: p.level, hp: p.hp, maxhp: p.maxhp, status: p.status === 'fnt' ? '' : p.status };
 }
 
-/** Sets up the view for a fight that has just started. */
-export function startBattleView(app: App): BattleView {
+function partyOptions(app: App, why: (i: number) => string | null): ListOption[] {
   const b = battle(app);
-  const trainer = app.session!.currentTrainer;
-  const opponent = `${trainer.title} ${trainer.name}`;
-  return {
-    // Taken from the engine, not the log: carried-over HP/status is applied after the leads are sent out.
-    active: { p1: activeFromEngine(b, 'p1'), p2: activeFromEngine(b, 'p2') },
-    log: [
-      { text: `${opponent} wants to fight!`, tone: 'move' },
-      { text: `${opponent} sent out ${b.active('p2').species.name}!` },
-      { text: `Go! ${b.active('p1').species.name}!` },
-    ],
-    logIndex: b.log.length,
-    animating: false,
-    menu: 'main',
-    item: null,
-  };
+  return app.session!.party.map((_, i) => {
+    const p = b.pokemon('p1', i);
+    const reason = why(i);
+    return {
+      html: BattleScene.partyRow({ species: p.species.name, level: p.level, hp: p.hp, maxhp: p.maxhp, status: p.status, fainted: p.fainted }),
+      disabled: reason !== null,
+      reason: reason ?? undefined,
+    };
+  });
 }
 
-function applyUpdate(view: BattleView, event: LogEvent) {
-  const u = event.update;
-  if (!u) return;
-  if (u.kind === 'switch') {
-    view.active[u.side] = { species: u.species, level: u.level, hp: u.hp, maxhp: u.maxhp, status: u.status };
-    return;
-  }
-  const active = view.active[u.side];
-  if (!active) return;
-  if (u.kind === 'hp') {
-    active.hp = u.hp;
-    if (u.maxhp) active.maxhp = u.maxhp;
-    active.status = u.status === 'fnt' ? '' : u.status || active.status;
-  } else if (u.kind === 'status') {
-    active.status = u.status;
-  } else if (u.kind === 'faint') {
-    active.hp = 0;
-  }
+/** Why the player can't switch to party slot `i`, in Gen 1 words, or null if they can. */
+function switchProblem(app: App, legal: LegalActions, i: number): string | null {
+  const p = battle(app).pokemon('p1', i);
+  if (p.fainted) return 'There’s no will to fight!';
+  if (p.isActive) return `${upper(p.species.name)} is already out!`;
+  if (!legal.switches.includes(i)) return 'Can’t switch out now!';
+  return null;
 }
 
-/** Plays back everything the simulator logged since last time. */
-async function playEvents(app: App) {
+/** Asks the player for this turn's action through the Gen 1 menus. */
+async function chooseAction(app: App, scene: BattleScene, legal: LegalActions): Promise<Action | null> {
   const view = app.battleView!;
-  const b = battle(app);
-  const trainer = app.session!.currentTrainer;
-  const events = formatLog(b.log.slice(view.logIndex), { gen: app.rules.gen, opponentName: `${trainer.title} ${trainer.name}` });
-  view.logIndex = b.log.length;
-  view.animating = true;
-  app.render();
-  for (const event of events) {
-    applyUpdate(view, event);
-    if (event.turn) view.log.push({ text: `Turn ${event.turn}`, turn: event.turn });
-    if (event.text) view.log.push({ text: event.text, tone: event.tone });
-    if (event.text || event.update) {
-      app.render();
-      await delay(event.tone === 'info' || !event.text ? QUICK_DELAY : TEXT_DELAY);
-    }
-  }
-  // Settle on the engine's state (covers anything the log doesn't spell out).
-  if (!b.ended) {
-    view.active.p1 = activeFromEngine(b, 'p1');
-    view.active.p2 = activeFromEngine(b, 'p2');
-  }
-  view.animating = false;
-  view.menu = 'main';
-  view.item = null;
-  app.render();
-}
-
-function statBox(view: ActiveView | undefined, side: SideId): string {
-  if (!view) return '';
-  return `
-    <div class="statbox ${side}">
-      <div class="statbox-name"><strong>${esc(view.species)}</strong> <span class="level">Lv${view.level}</span> ${statusBadge(view.status)}</div>
-      ${hpBar(view.hp, view.maxhp, { showNumbers: side === 'p1' })}
-    </div>`;
-}
-
-function field(app: App): string {
-  const view = app.battleView!;
-  const b = battle(app);
-  const foeLeft = b.sim.p2.pokemon.filter((p) => !p.fainted).length;
-  const foeBalls = b.sim.p2.pokemon
-    .map((_, i) => `<span class="ball${i >= foeLeft ? ' out' : ''}"></span>`)
-    .join('');
-  const mon = (side: SideId) => {
-    const a = view.active[side];
-    if (!a || a.hp <= 0) return '<div class="mon empty"></div>';
-    return `<div class="mon ${side}">${sprite(a.species, app.rules.gen, side)}</div>`;
-  };
-  return `
-    <div class="field" role="img" aria-label="Battlefield">
-      <div class="foe-row">
-        ${statBox(view.active.p2, 'p2')}
-        ${mon('p2')}
-      </div>
-      <div class="balls" aria-label="Opponent has ${foeLeft} of ${b.sim.p2.pokemon.length} Pokémon left">${foeBalls}</div>
-      <div class="you-row">
-        ${mon('p1')}
-        ${statBox(view.active.p1, 'p1')}
-      </div>
-    </div>`;
-}
-
-function partyStrip(app: App): string {
-  const b = battle(app);
-  return app.session!.party
-    .map((_, i) => {
-      const p = b.pokemon('p1', i);
-      return `<span class="party-mon${p.isActive ? ' active' : ''}" title="${esc(p.species.name)} ${p.hp}/${p.maxhp}">${icon(p.species.name, p.fainted)}</span>`;
-    })
-    .join('');
-}
-
-function moveButtons(app: App): string {
-  const legal = app.session!.playerActions();
-  return legal.moves
-    .map((m) => {
-      const move = app.rules.data.moves.find((x) => x.id === m.id);
-      const type = move?.type ?? 'Normal';
-      const name = move?.name ?? (m.id === 'recharge' ? 'Recharge' : m.id);
-      const pp = m.pp !== undefined ? `<span class="pp">${m.pp}/${m.maxpp}</span>` : '';
-      const disabled = m.disabled || m.pp === 0;
-      return `
-        <button class="move type-${esc(type.toLowerCase())}" data-action="move" data-slot="${m.slot}" ${disabled ? 'disabled' : ''}>
-          <span class="move-name">${esc(name)}</span>
-          <span class="move-meta"><span class="move-type">${esc(type)}</span>${pp}</span>
-        </button>`;
-    })
-    .join('');
-}
-
-function switchButtons(app: App, partyIndices: number[]): string {
-  const b = battle(app);
-  return app.session!.party
-    .map((_, i) => {
-      const p = b.pokemon('p1', i);
-      const can = partyIndices.includes(i);
-      const note = p.isActive ? 'In battle' : p.fainted ? 'Fainted' : '';
-      return `
-        <button class="switch" data-action="switch" data-index="${i}" ${can ? '' : 'disabled'}>
-          ${icon(p.species.name, p.fainted)}
-          <span class="switch-body"><span class="switch-name">${esc(p.species.name)} <span class="level">Lv${p.level}</span> ${statusBadge(p.fainted ? 'fnt' : p.status)}</span>
-          ${hpBar(p.hp, p.maxhp, { showNumbers: true })}${note ? `<span class="hint">${note}</span>` : ''}</span>
-        </button>`;
-    })
-    .join('');
-}
-
-function bagButtons(app: App): string {
-  const items = app.session!.bagItems();
-  if (items.length === 0) return '<p class="hint">Your bag is empty.</p>';
-  return items
-    .map(({ item, count }) => `
-      <button class="bag-item" data-action="pick-item" data-id="${esc(item.id)}">
-        <span>${esc(item.name)}</span><span class="count">×${count}</span>
-      </button>`)
-    .join('');
-}
-
-function targetButtons(app: App, item: BattleItem): string {
-  const b = battle(app);
-  return app.session!.party
-    .map((_, i) => {
-      const p = b.pokemon('p1', i);
-      const problem = b.itemProblem('p1', item, i);
-      return `
-        <button class="switch" data-action="use-item" data-index="${i}" ${problem ? `disabled title="${esc(problem)}"` : ''}>
-          ${icon(p.species.name, p.fainted)}
-          <span class="switch-body"><span class="switch-name">${esc(p.species.name)} ${statusBadge(p.fainted ? 'fnt' : p.status)}</span>
-          ${hpBar(p.hp, p.maxhp, { showNumbers: true })}</span>
-        </button>`;
-    })
-    .join('');
-}
-
-function controls(app: App): string {
   const session = app.session!;
-  const view = app.battleView!;
-  if (view.animating) return '<div class="controls waiting"><p class="hint">…</p></div>';
+  const b = battle(app);
 
-  if (session.status !== 'fighting') {
-    const won = session.records.at(-1)?.result === 'won';
-    const label = session.status === 'between' ? `Continue` : 'See results';
-    return `
-      <div class="controls done">
-        <p class="banner ${won ? 'good' : 'bad'}">${won ? `You defeated ${esc(session.records.at(-1)!.trainerName)}!` : 'You have no Pokémon left to battle…'}</p>
-        <button class="primary" data-action="continue">${label}</button>
-      </div>`;
-  }
-
-  const legal = session.playerActions();
-  if (legal.wait) return '<div class="controls waiting"><p class="hint">Waiting…</p></div>';
   if (legal.forceSwitch) {
-    return `<div class="controls"><p class="prompt">Choose your next Pokémon.</p><div class="switch-grid">${switchButtons(app, legal.switches)}</div></div>`;
+    scene.setText('Bring out which POKéMON?');
+    const i = await scene.choose(partyOptions(app, (i) => switchProblem(app, legal, i)), { place: 'overlay', title: 'Choose a POKéMON.', className: 'party' });
+    return i === null ? null : { type: 'switch', partyIndex: i };
   }
 
-  const active = battle(app).active('p1').species.name;
-  const tabs = `
-    <div class="tabs" role="tablist">
-      <button role="tab" data-action="menu" data-menu="main" aria-selected="${view.menu === 'main'}">Fight</button>
-      <button role="tab" data-action="menu" data-menu="switch" aria-selected="${view.menu === 'switch'}" ${legal.switches.length ? '' : 'disabled'}>Switch</button>
-      <button role="tab" data-action="menu" data-menu="bag" aria-selected="${view.menu === 'bag' || view.menu === 'target'}" ${legal.canUseItem ? '' : 'disabled'}>Bag</button>
-    </div>`;
+  // Locked into a move (charging, Thrash, recharge): the game carries on by itself.
+  if (legal.moves.length === 1 && legal.moves[0].pp === undefined) return { type: 'move', slot: legal.moves[0].slot };
 
-  let body = '';
-  if (view.menu === 'main') body = `<p class="prompt">What will ${esc(active)} do?</p><div class="move-grid">${moveButtons(app)}</div>`;
-  if (view.menu === 'switch') body = `<p class="prompt">Switch to…</p><div class="switch-grid">${switchButtons(app, legal.switches)}</div>`;
-  if (view.menu === 'bag') body = `<p class="prompt">Use an item. It takes your turn.</p><div class="bag-grid">${bagButtons(app)}</div>`;
-  if (view.menu === 'target' && view.item) {
-    body = `<p class="prompt">Use ${esc(view.item.name)} on… <button class="link" data-action="menu" data-menu="bag">back</button></p><div class="switch-grid">${targetButtons(app, view.item)}</div>`;
+  for (;;) {
+    // Gen 1 shows the menu with an empty text box beside it.
+    scene.clearText();
+    const choice = await scene.choose(
+      ['FIGHT', 'PKMN', 'ITEM', 'RUN'].map((label) => ({ html: label })),
+      { place: 'box', columns: 2, start: view.mainCursor, onCursor: (i) => (view.mainCursor = i), className: 'main' },
+    );
+    if (choice === null) continue;
+    view.mainCursor = choice;
+
+    if (choice === 0) {
+      const moves = legal.moves;
+      const info = (i: number) => {
+        const m = moves[i];
+        const move = app.rules.data.moves.find((x) => x.id === m.id);
+        return `<div>TYPE/</div><div class="gb-indent">${esc(upper(move?.type ?? '???'))}</div><div class="gb-right">${m.pp ?? '--'}/${m.maxpp ?? '--'}</div>`;
+      };
+      const pick = await scene.choose(
+        moves.map((m) => {
+          const move = app.rules.data.moves.find((x) => x.id === m.id);
+          return {
+            html: esc(upper(move?.name ?? m.id)),
+            disabled: m.disabled || m.pp === 0,
+            reason: m.disabled ? 'That move is disabled!' : 'No PP left for this move!',
+          };
+        }),
+        { place: 'box', cancellable: true, describe: info, start: view.moveCursor, onCursor: (i) => (view.moveCursor = i), className: 'moves' },
+      );
+      if (pick === null) continue;
+      view.moveCursor = pick;
+      return { type: 'move', slot: moves[pick].slot };
+    }
+
+    if (choice === 1) {
+      scene.clearText();
+      const i = await scene.choose(partyOptions(app, (i) => switchProblem(app, legal, i)), { place: 'overlay', cancellable: true, title: 'Choose a POKéMON.', className: 'party' });
+      if (i === null) continue;
+      return { type: 'switch', partyIndex: i };
+    }
+
+    if (choice === 2) {
+      const items = session.bagItems();
+      if (!legal.canUseItem) {
+        await scene.say('Can’t use items now!');
+        continue;
+      }
+      if (items.length === 0) {
+        await scene.say('The bag is empty!');
+        continue;
+      }
+      const pick = await scene.choose(
+        items.map(({ item, count }) => ({ html: `<span>${esc(upper(item.name))}</span><span class="gb-count">×${count}</span>` })),
+        { place: 'overlay', cancellable: true, title: 'ITEM', className: 'items' },
+      );
+      if (pick === null) continue;
+      const item: BattleItem = items[pick].item;
+      const activeIndex = b.partyIndex(b.active('p1'));
+      if (item.effect.kind === 'boost') {
+        const problem = b.itemProblem('p1', item, activeIndex);
+        if (problem) {
+          await scene.say(problem);
+          continue;
+        }
+        return { type: 'item', item, partyIndex: activeIndex };
+      }
+      const target = await scene.choose(partyOptions(app, (i) => b.itemProblem('p1', item, i)), {
+        place: 'overlay', cancellable: true, title: `Use ${upper(item.name)} on which POKéMON?`, className: 'party',
+      });
+      if (target === null) continue;
+      return { type: 'item', item, partyIndex: target };
+    }
+
+    await scene.say('No! There’s no running from a trainer battle!');
   }
-  return `<div class="controls">${tabs}${body}</div>`;
 }
 
-function logPanel(app: App): string {
-  const lines = app.battleView!.log
-    .map((l) => (l.turn ? `<li class="turn">Turn ${l.turn}</li>` : `<li class="${l.tone ?? ''}">${esc(l.text)}</li>`))
-    .join('');
-  return `<ol class="log" aria-live="polite" aria-label="Battle log">${lines}</ol>`;
+/** Runs the whole fight on the scene: intro, turns, and the ending. */
+async function runBattle(app: App, scene: BattleScene) {
+  const session = app.session!;
+  const b = battle(app);
+  const trainer = session.currentTrainer;
+  const opponent = upper(trainer.name);
+  const title = `${upper(trainer.title)} ${opponent}`;
+  const player = app.playerName;
+  const moveCategory = (name: string) => app.rules.data.moves.find((m) => m.name === name)?.category ?? 'Status';
+
+  // Intro, as in the games: the trainer slides in, then each side sends out its lead.
+  const balls = {
+    p1: session.party.map((_, i) => !b.pokemon('p1', i).fainted),
+    p2: b.sim.p2.pokemon.map((p) => !p.fainted),
+  };
+  if (trainer.sprite) await scene.trainerIn(Sprites.getAvatar(trainer.sprite), balls);
+  await scene.say(`${title} wants to fight!`);
+  await scene.trainerOut();
+  await scene.say(`${opponent} sent out ${upper(b.active('p2').species.name)}!`);
+  await scene.sendOut('p2', viewOf(b, 'p2'));
+  await scene.say(`Go! ${upper(b.active('p1').species.name)}!`);
+  await scene.sendOut('p1', viewOf(b, 'p1'));
+
+  let logIndex = b.log.length;
+  while (session.status === 'fighting') {
+    const legal = session.playerActions();
+    if (legal.wait) break;
+    const action = await chooseAction(app, scene, legal);
+    if (!action) continue;
+    const before = { p1: upper(b.active('p1').species.name), p2: upper(b.active('p2').species.name) };
+    const active: ClassicContext['active'] = {
+      p1: b.active('p1').fainted ? undefined : before.p1,
+      p2: b.active('p2').fainted ? undefined : before.p2,
+    };
+    try {
+      session.act(action);
+    } catch (error) {
+      await scene.say((error as Error).message);
+      continue;
+    }
+    const beats = classicBeats(b.log.slice(logIndex), { gen: app.rules.gen, player, opponent, moveCategory, active });
+    logIndex = b.log.length;
+    await scene.play(beats);
+  }
+
+  const won = session.records.at(-1)?.result === 'won';
+  if (won) {
+    await scene.say(`${player} defeated ${title}!`);
+    await scene.trainerBack();
+  } else {
+    await scene.say(`${player} is out of useable POKéMON!`);
+    await scene.say(`${player} blacked out!`);
+  }
+  scene.setText(won ? (session.status === 'won' ? 'You beat every trainer!' : 'On to the next room…') : 'The challenge is over.');
+  document.querySelector<HTMLElement>('.battle-after')?.removeAttribute('hidden');
+  document.querySelector<HTMLButtonElement>('.battle-after button')?.focus();
 }
 
 export const battleScreen: Screen = {
   render(app) {
     const session = app.session!;
     const trainer = session.currentTrainer;
+    const s = app.settings;
+    const speeds: [TextSpeed, string][] = [['slow', 'Slow'], ['medium', 'Medium'], ['fast', 'Fast'], ['instant', 'Instant']];
     return `
       <section class="screen battle">
         <header class="battle-head">
           <span>Fight ${session.fightIndex + 1} of ${session.trainers.length} · <strong>${esc(trainer.title)} ${esc(trainer.name)}</strong></span>
           <span class="meta">${esc(DIFFICULTY[session.tier].label)} · seed <code>${esc(session.setup.seed)}</code></span>
         </header>
-        <div class="battle-layout">
-          <div class="battle-main">
-            ${field(app)}
-            <div class="party-strip" aria-label="Your team">${partyStrip(app)}</div>
-            ${app.message ? `<p class="error">${esc(app.message)}</p>` : ''}
-            ${controls(app)}
-          </div>
-          ${logPanel(app)}
+        <div class="gb-host"></div>
+        <div class="battle-after" hidden>
+          <button class="primary" data-action="continue">${session.status === 'between' || session.status === 'fighting' ? 'Continue' : 'See results'}</button>
         </div>
+        <p class="controls-hint hint">Click or tap to continue text. Keys: arrows to move, Enter/Z to choose, Esc/X to go back.</p>
+        <div class="battle-settings">
+          <label>Text speed
+            <select data-input="speed">${speeds.map(([v, l]) => `<option value="${v}" ${s.textSpeed === v ? 'selected' : ''}>${l}</option>`).join('')}</select>
+          </label>
+          <label class="check"><input type="checkbox" data-input="auto" ${s.autoAdvance ? 'checked' : ''}> Auto-advance text</label>
+        </div>
+        <details class="battle-log"><summary>Battle log</summary><ol></ol></details>
       </section>`;
   },
 
-  afterRender() {
-    const log = document.querySelector('.log');
-    if (log) log.scrollTop = log.scrollHeight;
+  afterRender(app) {
+    const view = app.battleView!;
+    if (view.started) return;
+    view.started = true;
+    const host = document.querySelector<HTMLElement>('.gb-host')!;
+    const scene = new BattleScene(host, app.rules.gen, app.settings);
+    view.scene = scene;
+    const log = document.querySelector('.battle-log ol')!;
+    scene.onMessage = (text) => {
+      const li = document.createElement('li');
+      li.textContent = text;
+      log.append(li);
+    };
+    scene.root.focus();
+    void runBattle(app, scene).catch((error) => {
+      console.error(error);
+      scene.setText(`Something went wrong: ${(error as Error).message}`);
+    });
   },
 
   actions: {
-    menu(app, data) {
-      app.battleView!.menu = data.menu as Menu;
-      app.message = null;
-      app.render();
-    },
-    async move(app, data) {
-      app.message = null;
-      app.session!.act({ type: 'move', slot: Number(data.slot) });
-      await playEvents(app);
-    },
-    async switch(app, data) {
-      app.message = null;
-      app.session!.act({ type: 'switch', partyIndex: Number(data.index) });
-      await playEvents(app);
-    },
-    'pick-item'(app, data) {
-      const view = app.battleView!;
-      const item = app.session!.bagItems().find((b) => b.item.id === data.id)?.item ?? null;
-      if (!item) return;
-      const b = battle(app);
-      // Battle items only ever go on the Pokémon in battle.
-      if (item.effect.kind === 'boost') {
-        const problem = b.itemProblem('p1', item, b.partyIndex(b.active('p1')));
-        if (problem) throw new Error(problem);
-        return battleScreen.actions['use-item'](app, { index: String(b.partyIndex(b.active('p1'))), id: item.id });
-      }
-      view.item = item;
-      view.menu = 'target';
-      app.render();
-    },
-    async 'use-item'(app, data) {
-      const view = app.battleView!;
-      const item = view.item ?? app.session!.bagItems().find((b) => b.item.id === data.id)?.item;
-      if (!item) return;
-      app.message = null;
-      app.session!.act({ type: 'item', item, partyIndex: Number(data.index) });
-      await playEvents(app);
-    },
     continue(app) {
       const session = app.session!;
+      app.battleView?.scene?.destroy();
       if (session.status === 'between') app.go('between');
       else app.go('results');
+    },
+  },
+
+  inputs: {
+    speed(app, value) {
+      app.settings.textSpeed = value as TextSpeed;
+      saveSettings(app.settings);
+    },
+    auto(app, _value, checked) {
+      app.settings.autoAdvance = checked;
+      saveSettings(app.settings);
     },
   },
 };

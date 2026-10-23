@@ -2,6 +2,7 @@ import { DIFFICULTY, TIER_ORDER, type TierId } from '../../config/difficulty';
 import { createRun } from '../../game/run';
 import type { Screen } from '../app';
 import { esc } from '../dom';
+import { cleanName, saveSettings } from '../settings';
 
 /** What each tier means, in player terms (values live in src/config/difficulty.ts). */
 const TIER_BLURB: Record<TierId, string> = {
@@ -52,6 +53,9 @@ export const homeScreen: Screen = {
         <div class="choices tiers">${tiers}</div>
         <h2>Options</h2>
         <div class="options">
+          <label class="field-label">Your name
+            <input type="text" data-input="name" value="${esc(app.playerName)}" maxlength="7" spellcheck="false" autocomplete="off">
+          </label>
           <label class="check"><input type="checkbox" data-input="champion" ${app.includeChampion ? 'checked' : ''}> Fight the Champion after the Elite Four</label>
           <label class="field-label">Seed <span class="hint">(optional; replays a run)</span>
             <input type="text" data-input="seed" value="${esc(app.seedInput)}" placeholder="random" maxlength="32" spellcheck="false" autocomplete="off">
@@ -81,6 +85,10 @@ export const homeScreen: Screen = {
   },
 
   inputs: {
+    name(app, value) {
+      app.settings.playerName = cleanName(value);
+      saveSettings(app.settings);
+    },
     champion(app, _value, checked) {
       app.includeChampion = checked;
     },

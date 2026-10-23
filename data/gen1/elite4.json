@@ -9,6 +9,7 @@
     {
       "id": "lorelei",
       "name": "Lorelei",
+      "sprite": "lorelei-gen1",
       "title": "Elite Four",
       "ai": {
         "usesPerPokemon": 2,
@@ -30,6 +31,7 @@
     {
       "id": "bruno",
       "name": "Bruno",
+      "sprite": "bruno-gen1",
       "title": "Elite Four",
       "ai": {
         "usesPerPokemon": 2,
@@ -51,6 +53,7 @@
     {
       "id": "agatha",
       "name": "Agatha",
+      "sprite": "agatha-gen1",
       "title": "Elite Four",
       "ai": {
         "usesPerPokemon": 2,
@@ -75,6 +78,7 @@
     {
       "id": "lance",
       "name": "Lance",
+      "sprite": "lance-gen1",
       "title": "Elite Four",
       "ai": {
         "usesPerPokemon": 1,
@@ -96,6 +100,7 @@
     {
       "id": "champion",
       "name": "Blue",
+      "sprite": "blue-gen1champion",
       "title": "Champion",
       "optional": true,
       "ai": {

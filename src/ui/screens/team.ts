@@ -111,7 +111,7 @@ export const teamScreen: Screen = {
       app.go('home');
     },
     begin(app) {
-      app.session = new RunSession(app.rules, app.setup!, app.cart, { includeChampion: app.includeChampion });
+      app.session = new RunSession(app.rules, app.setup!, app.cart, { includeChampion: app.includeChampion, playerName: app.playerName });
       app.session.nextFight();
       app.session.startFight();
       app.battleView = startBattleView(app);

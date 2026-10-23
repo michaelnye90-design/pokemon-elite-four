@@ -30,5 +30,3 @@ export function statusBadge(status: string | null | undefined): string {
 export function typeBadge(type: string): string {
   return `<span class="type type-${esc(type.toLowerCase())}">${esc(type)}</span>`;
 }
-
-export const delay = (ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms));

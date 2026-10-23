@@ -13,6 +13,8 @@ export interface TrainerData {
   id: string;
   name: string;
   title: string;
+  /** Pokémon Showdown trainer sprite id, e.g. "lorelei-gen1". */
+  sprite?: string;
   optional?: boolean;
   ai: { usesPerPokemon: number; rules: TrainerAIRule[] };
   teams: { id: string; pokemon: { species: string; level: number; moves: string[] }[] }[];

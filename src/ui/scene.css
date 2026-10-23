@@ -1,0 +1,148 @@
+/* Gen 1 battle screen: everything is laid out on the Game Boy's 160x144
+   grid, where 1 "GB pixel" is var(--u), so the screen scales cleanly. */
+
+.gb-host {
+  container-type: inline-size;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.gb {
+  --u: calc(100cqw / 160);
+  --ink: #181818;
+  --paper: #f8f8f0;
+  position: relative;
+  width: 100cqw;
+  aspect-ratio: 160 / 144;
+  overflow: hidden;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Press Start 2P', ui-monospace, monospace;
+  font-size: calc(var(--u) * 7);
+  line-height: calc(var(--u) * 8);
+  border-radius: calc(var(--u) * 2);
+  box-shadow: 0 0 0 calc(var(--u) * 3) #2c2c34, 0 calc(var(--u) * 3) calc(var(--u) * 10) rgb(0 0 0 / 35%);
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: pointer;
+  image-rendering: pixelated;
+}
+.gb:focus { outline: none; }
+.gb:focus-visible { box-shadow: 0 0 0 calc(var(--u) * 3) #5b93ef; }
+.gb img { image-rendering: pixelated; display: block; pointer-events: none; }
+
+.gb-field { position: absolute; left: 0; right: 0; top: 0; height: calc(var(--u) * 96); }
+
+/* Pokémon. The containers clip, so a fainting sprite slides out of view. */
+.gb-mon { position: absolute; overflow: hidden; display: flex; align-items: flex-end; justify-content: center; }
+.gb-mon.p2 { right: calc(var(--u) * 4); top: calc(var(--u) * 0); width: calc(var(--u) * 64); height: calc(var(--u) * 64); }
+.gb-mon.p1 { left: calc(var(--u) * 2); bottom: calc(var(--u) * 0); width: calc(var(--u) * 72); height: calc(var(--u) * 72); }
+.gb-sprite { width: 100%; height: 100%; display: flex; align-items: flex-end; justify-content: center; visibility: hidden; }
+.gb-sprite img { width: 100%; height: auto; }
+
+.gb-trainer { position: absolute; right: calc(var(--u) * 4); top: calc(var(--u) * 0); width: calc(var(--u) * 64); height: calc(var(--u) * 64); }
+.gb-trainer img { width: 100%; height: auto; }
+
+/* HP boxes, with the Gen 1 L-shaped frame. */
+.gb-box { position: absolute; padding: calc(var(--u) * 1) calc(var(--u) * 3); }
+.gb-box.p2 {
+  left: calc(var(--u) * 6); top: calc(var(--u) * 4); width: calc(var(--u) * 80);
+  border-left: calc(var(--u) * 1) solid var(--ink); border-bottom: calc(var(--u) * 1) solid var(--ink);
+}
+.gb-box.p1 {
+  right: calc(var(--u) * 6); top: calc(var(--u) * 56); width: calc(var(--u) * 80);
+  border-right: calc(var(--u) * 1) solid var(--ink); border-bottom: calc(var(--u) * 1) solid var(--ink);
+}
+.gb-name { white-space: nowrap; overflow: hidden; }
+.gb-level { padding-left: calc(var(--u) * 32); }
+.gb-hp { display: flex; align-items: center; gap: calc(var(--u) * 1); }
+.gb-hp-label { font-size: calc(var(--u) * 5); }
+.gb-hp-track {
+  display: inline-block; width: calc(var(--u) * 50); height: calc(var(--u) * 4);
+  border: calc(var(--u) * 1) solid var(--ink); border-radius: calc(var(--u) * 2); background: var(--paper); overflow: hidden;
+}
+.gb-hp-fill { display: block; height: 100%; }
+.gb-hp-fill.high { background: #38a838; }
+.gb-hp-fill.mid { background: #e8b800; }
+.gb-hp-fill.low { background: #d82818; }
+.gb-hp-numbers { text-align: right; padding-right: calc(var(--u) * 2); }
+
+/* Poké Ball counts during the intro. */
+.gb-balls { position: absolute; display: flex; gap: calc(var(--u) * 1); }
+.gb-balls.p2 { left: calc(var(--u) * 8); top: calc(var(--u) * 30); }
+.gb-balls.p1 { right: calc(var(--u) * 8); top: calc(var(--u) * 84); }
+.gb-ball {
+  width: calc(var(--u) * 7); height: calc(var(--u) * 7); border-radius: 50%;
+  background: linear-gradient(#d82818 45%, var(--ink) 45% 58%, var(--paper) 58%);
+  border: calc(var(--u) * 1) solid var(--ink);
+}
+.gb-ball.out { background: #a8a8a8; }
+
+/* Text box along the bottom. */
+.gb-text, .gb-menu {
+  position: absolute; bottom: 0; height: calc(var(--u) * 48);
+  background: var(--paper);
+  border: calc(var(--u) * 2) solid var(--ink);
+  box-shadow: inset 0 0 0 calc(var(--u) * 1) var(--paper), inset 0 0 0 calc(var(--u) * 2) var(--ink);
+  border-radius: calc(var(--u) * 2);
+}
+.gb-text { left: 0; right: 0; padding: calc(var(--u) * 7) calc(var(--u) * 8); }
+.gb-line { margin: 0; height: calc(var(--u) * 16); line-height: calc(var(--u) * 16); white-space: pre; overflow: hidden; }
+.gb-arrow { position: absolute; right: calc(var(--u) * 8); bottom: calc(var(--u) * 5); animation: gb-blink 0.8s steps(2, start) infinite; }
+@keyframes gb-blink { to { visibility: hidden; } }
+
+/* Menus in the bottom box. */
+.gb-menu { right: 0; padding: calc(var(--u) * 6) calc(var(--u) * 4); cursor: default; }
+.gb-menu.main { width: calc(var(--u) * 88); }
+.gb-menu.moves { left: calc(var(--u) * 32); padding-top: calc(var(--u) * 5); }
+.gb-menu.moves .gb-options li { height: calc(var(--u) * 9); line-height: calc(var(--u) * 9); }
+.gb-menu-side {
+  position: absolute; left: calc(var(--u) * -34); bottom: calc(100% + var(--u) * 0); width: calc(var(--u) * 82); height: calc(var(--u) * 40);
+  padding: calc(var(--u) * 6) calc(var(--u) * 6); background: var(--paper);
+  border: calc(var(--u) * 2) solid var(--ink); border-radius: calc(var(--u) * 2);
+}
+.gb-menu-side .gb-indent { padding-left: calc(var(--u) * 8); }
+.gb-menu-side .gb-right { text-align: right; }
+.gb-options { list-style: none; margin: 0; padding: 0; display: grid; }
+.gb-options.cols-2 { grid-template-columns: 1fr 1fr; row-gap: calc(var(--u) * 8); }
+.gb-options li { display: flex; align-items: center; white-space: nowrap; cursor: pointer; }
+.gb-options li.disabled { color: #8a8a8a; }
+.gb-cursor { display: inline-block; flex: none; width: calc(var(--u) * 8); }
+.gb-back {
+  position: absolute; top: calc(var(--u) * -9); right: 0;
+  font: inherit; font-size: calc(var(--u) * 5); line-height: 1; padding: calc(var(--u) * 1.5) calc(var(--u) * 2);
+  color: var(--ink); background: var(--paper); border: calc(var(--u) * 1) solid var(--ink); border-radius: calc(var(--u) * 1);
+}
+.gb-overlay .gb-back { top: calc(var(--u) * 3); right: calc(var(--u) * 3); }
+
+/* Full-screen menus: party and items. */
+.gb-overlay {
+  position: absolute; inset: 0; background: var(--paper); padding: calc(var(--u) * 6) calc(var(--u) * 5);
+  overflow-y: auto; cursor: default; font-size: calc(var(--u) * 6);
+}
+.gb-menu-title { margin-bottom: calc(var(--u) * 5); padding-right: calc(var(--u) * 30); }
+.gb-overlay .gb-options li { min-height: calc(var(--u) * 16); padding: calc(var(--u) * 1) 0; }
+.gb-overlay.items .gb-options li { justify-content: space-between; }
+.gb-count { margin-left: auto; padding-left: calc(var(--u) * 6); }
+.gb-party {
+  display: grid; grid-template-columns: calc(var(--u) * 20) 1fr auto; grid-template-rows: auto auto;
+  column-gap: calc(var(--u) * 3); align-items: center; width: 100%;
+}
+.gb-party .icon { grid-row: span 2; }
+.gb-party-name { grid-column: 2; }
+.gb-party-level { grid-column: 3; text-align: right; }
+.gb-party .gb-hp { grid-column: 2; }
+.gb-party .gb-hp-track { width: calc(var(--u) * 48); }
+.gb-party-numbers { grid-column: 3; text-align: right; }
+
+/* Around the screen. */
+.battle .battle-head { max-width: 640px; margin: 0 auto 12px; }
+.battle-after { text-align: center; margin: 14px 0 4px; }
+.controls-hint { text-align: center; margin: 12px auto 4px; max-width: 640px; }
+.battle-settings { display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: center; align-items: center; margin: 8px auto; max-width: 640px; font-size: 0.9rem; }
+.battle-settings select { font: inherit; color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 4px 6px; margin-left: 6px; }
+.battle-log { max-width: 640px; margin: 8px auto 0; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; }
+.battle-log summary { cursor: pointer; color: var(--muted); }
+.battle-log ol { margin: 8px 0 0; padding-left: 0; list-style: none; max-height: 260px; overflow-y: auto; font-size: 0.85rem; }
+.battle-log li { padding: 1px 0; }

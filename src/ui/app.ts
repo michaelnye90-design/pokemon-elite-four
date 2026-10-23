@@ -11,6 +11,7 @@ import { betweenScreen } from './screens/between';
 import { homeScreen } from './screens/home';
 import { resultsScreen } from './screens/results';
 import { teamScreen } from './screens/team';
+import { loadSettings, type Settings } from './settings';
 
 export type ScreenId = 'home' | 'team' | 'battle' | 'between' | 'results';
 
@@ -45,6 +46,12 @@ export class App {
   /** Between-fights item being aimed at a party member. */
   pendingItem: string | null = null;
   message: string | null = null;
+  /** Text speed, auto-advance and the player's name, remembered in this browser. */
+  settings: Settings = loadSettings();
+
+  get playerName(): string {
+    return this.settings.playerName;
+  }
 
   constructor(
     private readonly root: HTMLElement,
