@@ -15,14 +15,18 @@ import { USE_ITEM_CONDITION } from '../engine/items';
 import type { Ruleset } from './ruleset';
 
 const MOD_ID = 'elitefourgen1';
+const format = () => ({ name: '[Gen 1] Elite Four Challenge', mod: MOD_ID, ruleset: [] });
 
-const dex = Dex.mod(MOD_ID, {
+Dex.mod(MOD_ID, {
   Scripts: { inherit: 'gen1', gen: 1 },
   Conditions: { useitem: USE_ITEM_CONDITION },
-  Formats: [{ name: '[Gen 1] Elite Four Challenge', mod: MOD_ID, ruleset: [] }],
+  Formats: [format()],
 } as Parameters<typeof Dex.mod>[1]);
+// Also register the format with the base dex, which is where battles restored
+// from a snapshot (AI lookahead) look formats up by id.
+Dex.formats.extend([format()] as Parameters<typeof Dex.formats.extend>[0]);
 
-export const gen1Format: Format = dex.formats.get('gen1elitefourchallenge');
+export const gen1Format: Format = Dex.formats.get('gen1elitefourchallenge');
 
 export const gen1: Ruleset = {
   gen: 1,
