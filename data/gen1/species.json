@@ -19,6 +19,7 @@
     "evos": [
       "ivysaur"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -41,6 +42,10 @@
     "evos": [
       "venusaur"
     ],
+    "evolution": {
+      "method": "level",
+      "level": 16
+    },
     "tags": []
   },
   {
@@ -61,6 +66,10 @@
     "bst": 425,
     "prevo": "ivysaur",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 32
+    },
     "tags": []
   },
   {
@@ -82,6 +91,7 @@
     "evos": [
       "charmeleon"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -103,6 +113,10 @@
     "evos": [
       "charizard"
     ],
+    "evolution": {
+      "method": "level",
+      "level": 16
+    },
     "tags": []
   },
   {
@@ -123,6 +137,10 @@
     "bst": 425,
     "prevo": "charmeleon",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 36
+    },
     "tags": []
   },
   {
@@ -144,6 +162,7 @@
     "evos": [
       "wartortle"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -165,6 +184,10 @@
     "evos": [
       "blastoise"
     ],
+    "evolution": {
+      "method": "level",
+      "level": 16
+    },
     "tags": []
   },
   {
@@ -184,6 +207,10 @@
     "bst": 425,
     "prevo": "wartortle",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 36
+    },
     "tags": []
   },
   {
@@ -205,6 +232,7 @@
     "evos": [
       "metapod"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -226,6 +254,10 @@
     "evos": [
       "butterfree"
     ],
+    "evolution": {
+      "method": "level",
+      "level": 7
+    },
     "tags": []
   },
   {
@@ -246,6 +278,10 @@
     "bst": 305,
     "prevo": "metapod",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 10
+    },
     "tags": []
   },
   {
@@ -268,6 +304,7 @@
     "evos": [
       "kakuna"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -290,6 +327,10 @@
     "evos": [
       "beedrill"
     ],
+    "evolution": {
+      "method": "level",
+      "level": 7
+    },
     "tags": []
   },
   {
@@ -310,6 +351,10 @@
     "bst": 305,
     "prevo": "kakuna",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 10
+    },
     "tags": []
   },
   {
@@ -332,6 +377,7 @@
     "evos": [
       "pidgeotto"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -354,6 +400,10 @@
     "evos": [
       "pidgeot"
     ],
+    "evolution": {
+      "method": "level",
+      "level": 18
+    },
     "tags": []
   },
   {
@@ -374,6 +424,10 @@
     "bst": 399,
     "prevo": "pidgeotto",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 36
+    },
     "tags": []
   },
   {
@@ -395,6 +449,7 @@
     "evos": [
       "raticate"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -414,6 +469,10 @@
     "bst": 343,
     "prevo": "rattata",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 20
+    },
     "tags": []
   },
   {
@@ -436,6 +495,7 @@
     "evos": [
       "fearow"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -456,6 +516,10 @@
     "bst": 381,
     "prevo": "spearow",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 20
+    },
     "tags": []
   },
   {
@@ -477,6 +541,7 @@
     "evos": [
       "arbok"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -496,6 +561,10 @@
     "bst": 359,
     "prevo": "ekans",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 22
+    },
     "tags": []
   },
   {
@@ -517,6 +586,7 @@
     "evos": [
       "raichu"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -536,6 +606,10 @@
     "bst": 395,
     "prevo": "pikachu",
     "evos": [],
+    "evolution": {
+      "method": "useItem",
+      "item": "Thunder Stone"
+    },
     "tags": []
   },
   {
@@ -557,6 +631,7 @@
     "evos": [
       "sandslash"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -576,6 +651,10 @@
     "bst": 405,
     "prevo": "sandshrew",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 22
+    },
     "tags": []
   },
   {
@@ -597,6 +676,7 @@
     "evos": [
       "nidorina"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -618,6 +698,10 @@
     "evos": [
       "nidoqueen"
     ],
+    "evolution": {
+      "method": "level",
+      "level": 16
+    },
     "tags": []
   },
   {
@@ -638,6 +722,10 @@
     "bst": 410,
     "prevo": "nidorina",
     "evos": [],
+    "evolution": {
+      "method": "useItem",
+      "item": "Moon Stone"
+    },
     "tags": []
   },
   {
@@ -659,6 +747,7 @@
     "evos": [
       "nidorino"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -680,6 +769,10 @@
     "evos": [
       "nidoking"
     ],
+    "evolution": {
+      "method": "level",
+      "level": 16
+    },
     "tags": []
   },
   {
@@ -700,6 +793,10 @@
     "bst": 410,
     "prevo": "nidorino",
     "evos": [],
+    "evolution": {
+      "method": "useItem",
+      "item": "Moon Stone"
+    },
     "tags": []
   },
   {
@@ -721,6 +818,7 @@
     "evos": [
       "clefable"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -740,6 +838,10 @@
     "bst": 383,
     "prevo": "clefairy",
     "evos": [],
+    "evolution": {
+      "method": "useItem",
+      "item": "Moon Stone"
+    },
     "tags": []
   },
   {
@@ -761,6 +863,7 @@
     "evos": [
       "ninetales"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -780,6 +883,10 @@
     "bst": 424,
     "prevo": "vulpix",
     "evos": [],
+    "evolution": {
+      "method": "useItem",
+      "item": "Fire Stone"
+    },
     "tags": []
   },
   {
@@ -801,6 +908,7 @@
     "evos": [
       "wigglytuff"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -820,6 +928,10 @@
     "bst": 350,
     "prevo": "jigglypuff",
     "evos": [],
+    "evolution": {
+      "method": "useItem",
+      "item": "Moon Stone"
+    },
     "tags": []
   },
   {
@@ -842,6 +954,7 @@
     "evos": [
       "golbat"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -862,6 +975,10 @@
     "bst": 390,
     "prevo": "zubat",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 22
+    },
     "tags": []
   },
   {
@@ -884,6 +1001,7 @@
     "evos": [
       "gloom"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -906,6 +1024,10 @@
     "evos": [
       "vileplume"
     ],
+    "evolution": {
+      "method": "level",
+      "level": 21
+    },
     "tags": []
   },
   {
@@ -926,6 +1048,10 @@
     "bst": 390,
     "prevo": "gloom",
     "evos": [],
+    "evolution": {
+      "method": "useItem",
+      "item": "Leaf Stone"
+    },
     "tags": []
   },
   {
@@ -948,6 +1074,7 @@
     "evos": [
       "parasect"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -968,6 +1095,10 @@
     "bst": 345,
     "prevo": "paras",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 24
+    },
     "tags": []
   },
   {
@@ -990,6 +1121,7 @@
     "evos": [
       "venomoth"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -1010,6 +1142,10 @@
     "bst": 375,
     "prevo": "venonat",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 31
+    },
     "tags": []
   },
   {
@@ -1031,6 +1167,7 @@
     "evos": [
       "dugtrio"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -1050,6 +1187,10 @@
     "bst": 355,
     "prevo": "diglett",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 26
+    },
     "tags": []
   },
   {
@@ -1071,6 +1212,7 @@
     "evos": [
       "persian"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -1090,6 +1232,10 @@
     "bst": 375,
     "prevo": "meowth",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 28
+    },
     "tags": []
   },
   {
@@ -1111,6 +1257,7 @@
     "evos": [
       "golduck"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -1130,6 +1277,10 @@
     "bst": 405,
     "prevo": "psyduck",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 33
+    },
     "tags": []
   },
   {
@@ -1151,6 +1302,7 @@
     "evos": [
       "primeape"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -1170,6 +1322,10 @@
     "bst": 385,
     "prevo": "mankey",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 28
+    },
     "tags": []
   },
   {
@@ -1191,6 +1347,7 @@
     "evos": [
       "arcanine"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -1210,6 +1367,10 @@
     "bst": 455,
     "prevo": "growlithe",
     "evos": [],
+    "evolution": {
+      "method": "useItem",
+      "item": "Fire Stone"
+    },
     "tags": []
   },
   {
@@ -1231,6 +1392,7 @@
     "evos": [
       "poliwhirl"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -1252,6 +1414,10 @@
     "evos": [
       "poliwrath"
     ],
+    "evolution": {
+      "method": "level",
+      "level": 25
+    },
     "tags": []
   },
   {
@@ -1272,6 +1438,10 @@
     "bst": 410,
     "prevo": "poliwhirl",
     "evos": [],
+    "evolution": {
+      "method": "useItem",
+      "item": "Water Stone"
+    },
     "tags": []
   },
   {
@@ -1293,6 +1463,7 @@
     "evos": [
       "kadabra"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -1314,6 +1485,10 @@
     "evos": [
       "alakazam"
     ],
+    "evolution": {
+      "method": "level",
+      "level": 16
+    },
     "tags": []
   },
   {
@@ -1333,6 +1508,9 @@
     "bst": 405,
     "prevo": "kadabra",
     "evos": [],
+    "evolution": {
+      "method": "trade"
+    },
     "tags": []
   },
   {
@@ -1354,6 +1532,7 @@
     "evos": [
       "machoke"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -1375,6 +1554,10 @@
     "evos": [
       "machamp"
     ],
+    "evolution": {
+      "method": "level",
+      "level": 28
+    },
     "tags": []
   },
   {
@@ -1394,6 +1577,9 @@
     "bst": 420,
     "prevo": "machoke",
     "evos": [],
+    "evolution": {
+      "method": "trade"
+    },
     "tags": []
   },
   {
@@ -1416,6 +1602,7 @@
     "evos": [
       "weepinbell"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -1438,6 +1625,10 @@
     "evos": [
       "victreebel"
     ],
+    "evolution": {
+      "method": "level",
+      "level": 21
+    },
     "tags": []
   },
   {
@@ -1458,6 +1649,10 @@
     "bst": 420,
     "prevo": "weepinbell",
     "evos": [],
+    "evolution": {
+      "method": "useItem",
+      "item": "Leaf Stone"
+    },
     "tags": []
   },
   {
@@ -1480,6 +1675,7 @@
     "evos": [
       "tentacruel"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -1500,6 +1696,10 @@
     "bst": 435,
     "prevo": "tentacool",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 30
+    },
     "tags": []
   },
   {
@@ -1522,6 +1722,7 @@
     "evos": [
       "graveler"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -1544,6 +1745,10 @@
     "evos": [
       "golem"
     ],
+    "evolution": {
+      "method": "level",
+      "level": 25
+    },
     "tags": []
   },
   {
@@ -1564,6 +1769,9 @@
     "bst": 420,
     "prevo": "graveler",
     "evos": [],
+    "evolution": {
+      "method": "trade"
+    },
     "tags": []
   },
   {
@@ -1585,6 +1793,7 @@
     "evos": [
       "rapidash"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -1604,6 +1813,10 @@
     "bst": 420,
     "prevo": "ponyta",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 40
+    },
     "tags": []
   },
   {
@@ -1626,6 +1839,7 @@
     "evos": [
       "slowbro"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -1646,6 +1860,10 @@
     "bst": 390,
     "prevo": "slowpoke",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 37
+    },
     "tags": []
   },
   {
@@ -1667,6 +1885,7 @@
     "evos": [
       "magneton"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -1686,6 +1905,10 @@
     "bst": 395,
     "prevo": "magnemite",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 30
+    },
     "tags": []
   },
   {
@@ -1706,6 +1929,7 @@
     "bst": 290,
     "prevo": null,
     "evos": [],
+    "evolution": null,
     "tags": []
   },
   {
@@ -1728,6 +1952,7 @@
     "evos": [
       "dodrio"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -1748,6 +1973,10 @@
     "bst": 400,
     "prevo": "doduo",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 31
+    },
     "tags": []
   },
   {
@@ -1769,6 +1998,7 @@
     "evos": [
       "dewgong"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -1789,6 +2019,10 @@
     "bst": 405,
     "prevo": "seel",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 34
+    },
     "tags": []
   },
   {
@@ -1810,6 +2044,7 @@
     "evos": [
       "muk"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -1829,6 +2064,10 @@
     "bst": 400,
     "prevo": "grimer",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 38
+    },
     "tags": []
   },
   {
@@ -1850,6 +2089,7 @@
     "evos": [
       "cloyster"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -1870,6 +2110,10 @@
     "bst": 480,
     "prevo": "shellder",
     "evos": [],
+    "evolution": {
+      "method": "useItem",
+      "item": "Water Stone"
+    },
     "tags": []
   },
   {
@@ -1892,6 +2136,7 @@
     "evos": [
       "haunter"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -1914,6 +2159,10 @@
     "evos": [
       "gengar"
     ],
+    "evolution": {
+      "method": "level",
+      "level": 25
+    },
     "tags": []
   },
   {
@@ -1934,6 +2183,9 @@
     "bst": 425,
     "prevo": "haunter",
     "evos": [],
+    "evolution": {
+      "method": "trade"
+    },
     "tags": []
   },
   {
@@ -1954,6 +2206,7 @@
     "bst": 340,
     "prevo": null,
     "evos": [],
+    "evolution": null,
     "tags": []
   },
   {
@@ -1975,6 +2228,7 @@
     "evos": [
       "hypno"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -1994,6 +2248,10 @@
     "bst": 410,
     "prevo": "drowzee",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 26
+    },
     "tags": []
   },
   {
@@ -2015,6 +2273,7 @@
     "evos": [
       "kingler"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -2034,6 +2293,10 @@
     "bst": 425,
     "prevo": "krabby",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 28
+    },
     "tags": []
   },
   {
@@ -2055,6 +2318,7 @@
     "evos": [
       "electrode"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -2074,6 +2338,10 @@
     "bst": 400,
     "prevo": "voltorb",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 30
+    },
     "tags": []
   },
   {
@@ -2096,6 +2364,7 @@
     "evos": [
       "exeggutor"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -2116,6 +2385,10 @@
     "bst": 455,
     "prevo": "exeggcute",
     "evos": [],
+    "evolution": {
+      "method": "useItem",
+      "item": "Leaf Stone"
+    },
     "tags": []
   },
   {
@@ -2137,6 +2410,7 @@
     "evos": [
       "marowak"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -2156,6 +2430,10 @@
     "bst": 345,
     "prevo": "cubone",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 28
+    },
     "tags": []
   },
   {
@@ -2175,6 +2453,7 @@
     "bst": 345,
     "prevo": null,
     "evos": [],
+    "evolution": null,
     "tags": []
   },
   {
@@ -2194,6 +2473,7 @@
     "bst": 345,
     "prevo": null,
     "evos": [],
+    "evolution": null,
     "tags": []
   },
   {
@@ -2213,6 +2493,7 @@
     "bst": 310,
     "prevo": null,
     "evos": [],
+    "evolution": null,
     "tags": []
   },
   {
@@ -2234,6 +2515,7 @@
     "evos": [
       "weezing"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -2253,6 +2535,10 @@
     "bst": 420,
     "prevo": "koffing",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 35
+    },
     "tags": []
   },
   {
@@ -2275,6 +2561,7 @@
     "evos": [
       "rhydon"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -2295,6 +2582,10 @@
     "bst": 440,
     "prevo": "rhyhorn",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 42
+    },
     "tags": []
   },
   {
@@ -2314,6 +2605,7 @@
     "bst": 415,
     "prevo": null,
     "evos": [],
+    "evolution": null,
     "tags": []
   },
   {
@@ -2333,6 +2625,7 @@
     "bst": 395,
     "prevo": null,
     "evos": [],
+    "evolution": null,
     "tags": []
   },
   {
@@ -2352,6 +2645,7 @@
     "bst": 410,
     "prevo": null,
     "evos": [],
+    "evolution": null,
     "tags": []
   },
   {
@@ -2373,6 +2667,7 @@
     "evos": [
       "seadra"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -2392,6 +2687,10 @@
     "bst": 395,
     "prevo": "horsea",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 32
+    },
     "tags": []
   },
   {
@@ -2413,6 +2712,7 @@
     "evos": [
       "seaking"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -2432,6 +2732,10 @@
     "bst": 385,
     "prevo": "goldeen",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 33
+    },
     "tags": []
   },
   {
@@ -2453,6 +2757,7 @@
     "evos": [
       "starmie"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -2473,6 +2778,10 @@
     "bst": 435,
     "prevo": "staryu",
     "evos": [],
+    "evolution": {
+      "method": "useItem",
+      "item": "Water Stone"
+    },
     "tags": []
   },
   {
@@ -2492,6 +2801,7 @@
     "bst": 340,
     "prevo": null,
     "evos": [],
+    "evolution": null,
     "tags": []
   },
   {
@@ -2512,6 +2822,7 @@
     "bst": 420,
     "prevo": null,
     "evos": [],
+    "evolution": null,
     "tags": []
   },
   {
@@ -2532,6 +2843,7 @@
     "bst": 340,
     "prevo": null,
     "evos": [],
+    "evolution": null,
     "tags": []
   },
   {
@@ -2551,6 +2863,7 @@
     "bst": 395,
     "prevo": null,
     "evos": [],
+    "evolution": null,
     "tags": []
   },
   {
@@ -2570,6 +2883,7 @@
     "bst": 395,
     "prevo": null,
     "evos": [],
+    "evolution": null,
     "tags": []
   },
   {
@@ -2589,6 +2903,7 @@
     "bst": 430,
     "prevo": null,
     "evos": [],
+    "evolution": null,
     "tags": []
   },
   {
@@ -2608,6 +2923,7 @@
     "bst": 450,
     "prevo": null,
     "evos": [],
+    "evolution": null,
     "tags": []
   },
   {
@@ -2629,6 +2945,7 @@
     "evos": [
       "gyarados"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -2649,6 +2966,10 @@
     "bst": 480,
     "prevo": "magikarp",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 20
+    },
     "tags": []
   },
   {
@@ -2669,6 +2990,7 @@
     "bst": 450,
     "prevo": null,
     "evos": [],
+    "evolution": null,
     "tags": []
   },
   {
@@ -2688,6 +3010,7 @@
     "bst": 240,
     "prevo": null,
     "evos": [],
+    "evolution": null,
     "tags": []
   },
   {
@@ -2711,6 +3034,7 @@
       "jolteon",
       "flareon"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -2730,6 +3054,10 @@
     "bst": 430,
     "prevo": "eevee",
     "evos": [],
+    "evolution": {
+      "method": "useItem",
+      "item": "Water Stone"
+    },
     "tags": []
   },
   {
@@ -2749,6 +3077,10 @@
     "bst": 430,
     "prevo": "eevee",
     "evos": [],
+    "evolution": {
+      "method": "useItem",
+      "item": "Thunder Stone"
+    },
     "tags": []
   },
   {
@@ -2768,6 +3100,10 @@
     "bst": 430,
     "prevo": "eevee",
     "evos": [],
+    "evolution": {
+      "method": "useItem",
+      "item": "Fire Stone"
+    },
     "tags": []
   },
   {
@@ -2787,6 +3123,7 @@
     "bst": 310,
     "prevo": null,
     "evos": [],
+    "evolution": null,
     "tags": []
   },
   {
@@ -2809,6 +3146,7 @@
     "evos": [
       "omastar"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -2829,6 +3167,10 @@
     "bst": 425,
     "prevo": "omanyte",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 40
+    },
     "tags": []
   },
   {
@@ -2851,6 +3193,7 @@
     "evos": [
       "kabutops"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -2871,6 +3214,10 @@
     "bst": 430,
     "prevo": "kabuto",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 40
+    },
     "tags": []
   },
   {
@@ -2891,6 +3238,7 @@
     "bst": 440,
     "prevo": null,
     "evos": [],
+    "evolution": null,
     "tags": []
   },
   {
@@ -2910,6 +3258,7 @@
     "bst": 430,
     "prevo": null,
     "evos": [],
+    "evolution": null,
     "tags": []
   },
   {
@@ -2930,6 +3279,7 @@
     "bst": 485,
     "prevo": null,
     "evos": [],
+    "evolution": null,
     "tags": [
       "Sub-Legendary"
     ]
@@ -2952,6 +3302,7 @@
     "bst": 490,
     "prevo": null,
     "evos": [],
+    "evolution": null,
     "tags": [
       "Sub-Legendary"
     ]
@@ -2974,6 +3325,7 @@
     "bst": 495,
     "prevo": null,
     "evos": [],
+    "evolution": null,
     "tags": [
       "Sub-Legendary"
     ]
@@ -2997,6 +3349,7 @@
     "evos": [
       "dragonair"
     ],
+    "evolution": null,
     "tags": []
   },
   {
@@ -3018,6 +3371,10 @@
     "evos": [
       "dragonite"
     ],
+    "evolution": {
+      "method": "level",
+      "level": 30
+    },
     "tags": []
   },
   {
@@ -3038,6 +3395,10 @@
     "bst": 500,
     "prevo": "dragonair",
     "evos": [],
+    "evolution": {
+      "method": "level",
+      "level": 55
+    },
     "tags": []
   },
   {
@@ -3057,6 +3418,7 @@
     "bst": 590,
     "prevo": null,
     "evos": [],
+    "evolution": null,
     "tags": [
       "Restricted Legendary"
     ]
@@ -3078,6 +3440,7 @@
     "bst": 500,
     "prevo": null,
     "evos": [],
+    "evolution": null,
     "tags": [
       "Mythical"
     ]

@@ -55,6 +55,10 @@ const species = [...gen.species]
       bst: Object.values(baseStats).reduce((sum, n) => sum + n, 0),
       prevo: s.prevo ? gen.species.get(s.prevo)!.id : null,
       evos: (s.evos ?? []).map((e) => gen.species.get(e)?.id).filter(Boolean),
+      // How this species evolves from its prevo: level-up (with level), trade, or item.
+      evolution: s.prevo
+        ? { method: s.evoType ?? 'level', ...(s.evoLevel ? { level: s.evoLevel } : {}), ...(s.evoItem ? { item: s.evoItem } : {}) }
+        : null,
       tags: s.tags,
     };
   });

@@ -1,0 +1,24 @@
+{
+  "game": "Yellow",
+  "sourcesDoc": "docs/data-sources/gen1-items.md",
+  "heldItems": false,
+  "items": [
+    { "id": "potion", "name": "Potion", "category": "healing", "price": 300, "effect": { "kind": "heal", "hp": 20 } },
+    { "id": "superpotion", "name": "Super Potion", "category": "healing", "price": 700, "effect": { "kind": "heal", "hp": 50 } },
+    { "id": "hyperpotion", "name": "Hyper Potion", "category": "healing", "price": 1500, "effect": { "kind": "heal", "hp": 200 } },
+    { "id": "maxpotion", "name": "Max Potion", "category": "healing", "price": 2500, "effect": { "kind": "heal", "hp": "full" } },
+    { "id": "fullrestore", "name": "Full Restore", "category": "healing", "price": 3000, "effect": { "kind": "heal", "hp": "full", "cures": ["brn", "par", "slp", "frz", "psn"] } },
+    { "id": "revive", "name": "Revive", "category": "revive", "price": 1500, "effect": { "kind": "revive", "hpFraction": 0.5 } },
+    { "id": "maxrevive", "name": "Max Revive", "category": "revive", "price": 4000, "notSoldInGame": true, "effect": { "kind": "revive", "hpFraction": 1 } },
+    { "id": "antidote", "name": "Antidote", "category": "status", "price": 100, "effect": { "kind": "cure", "cures": ["psn"] } },
+    { "id": "burnheal", "name": "Burn Heal", "category": "status", "price": 250, "effect": { "kind": "cure", "cures": ["brn"] } },
+    { "id": "iceheal", "name": "Ice Heal", "category": "status", "price": 250, "effect": { "kind": "cure", "cures": ["frz"] } },
+    { "id": "awakening", "name": "Awakening", "category": "status", "price": 200, "effect": { "kind": "cure", "cures": ["slp"] } },
+    { "id": "paralyzeheal", "name": "Parlyz Heal", "category": "status", "price": 200, "effect": { "kind": "cure", "cures": ["par"] } },
+    { "id": "fullheal", "name": "Full Heal", "category": "status", "price": 600, "effect": { "kind": "cure", "cures": ["brn", "par", "slp", "frz", "psn"] } },
+    { "id": "xattack", "name": "X Attack", "category": "battle", "price": 500, "effect": { "kind": "boost", "boosts": { "atk": 1 } } },
+    { "id": "xdefend", "name": "X Defend", "category": "battle", "price": 550, "effect": { "kind": "boost", "boosts": { "def": 1 } } },
+    { "id": "xspeed", "name": "X Speed", "category": "battle", "price": 350, "effect": { "kind": "boost", "boosts": { "spe": 1 } } },
+    { "id": "xspecial", "name": "X Special", "category": "battle", "price": 350, "effect": { "kind": "boost", "boosts": { "spa": 1, "spd": 1 } } }
+  ]
+}

@@ -21,7 +21,7 @@ export function battleSeed(runSeed: string, battleIndex: number): PRNGSeed {
 }
 
 // FNV-1a with a murmur3 finalizer: not cryptographic, just well-mixed and stable.
-function hash32(text: string): number {
+export function hash32(text: string): number {
   let h = 0x811c9dc5;
   for (let i = 0; i < text.length; i++) {
     h ^= text.charCodeAt(i);

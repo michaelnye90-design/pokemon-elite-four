@@ -18,29 +18,39 @@ export interface TrainerData {
   teams: { id: string; pokemon: { species: string; level: number; moves: string[] }[] }[];
 }
 
+export interface Dvs {
+  hp: number;
+  atk: number;
+  def: number;
+  spe: number;
+  spc: number;
+}
+
 export interface EliteFourData {
   game: string;
-  trainerPokemon: {
-    dvs: { hp: number; atk: number; def: number; spe: number; spc: number };
-    statExp: number;
-  };
+  trainerPokemon: { dvs: Dvs; statExp: number };
   trainers: TrainerData[];
 }
 
-/** Builds a trainer's party for the engine. Showdown stores DVs as IVs (DV x 2) and stat exp as EVs. */
+/**
+ * A Gen 1-2 Pokémon for the simulator. Showdown stores DVs as IVs (DV x 2) and
+ * stat experience as EVs (its square root, capped at 255).
+ */
+export function gen12Set(species: string, level: number, moves: string[], dvs: Dvs, statExp: number): PokemonSet {
+  const ev = Math.min(255, Math.ceil(Math.sqrt(statExp)));
+  return {
+    name: species,
+    species,
+    level,
+    moves: [...moves],
+    item: '', ability: '', nature: '', gender: '',
+    ivs: { hp: dvs.hp * 2, atk: dvs.atk * 2, def: dvs.def * 2, spa: dvs.spc * 2, spd: dvs.spc * 2, spe: dvs.spe * 2 },
+    evs: { hp: ev, atk: ev, def: ev, spa: ev, spd: ev, spe: ev },
+  };
+}
+
+/** Builds a trainer's party for the engine. */
 export function trainerParty(data: EliteFourData, team: TrainerData['teams'][number]): PartyMember[] {
   const { dvs, statExp } = data.trainerPokemon;
-  const ev = Math.min(255, Math.ceil(Math.sqrt(statExp)));
-  return team.pokemon.map((p): PartyMember => {
-    const set: PokemonSet = {
-      name: p.species,
-      species: p.species,
-      level: p.level,
-      moves: [...p.moves],
-      item: '', ability: '', nature: '', gender: '',
-      ivs: { hp: dvs.hp * 2, atk: dvs.atk * 2, def: dvs.def * 2, spa: dvs.spc * 2, spd: dvs.spc * 2, spe: dvs.spe * 2 },
-      evs: { hp: ev, atk: ev, def: ev, spa: ev, spd: ev, spe: ev },
-    };
-    return { set };
-  });
+  return team.pokemon.map((p) => ({ set: gen12Set(p.species, p.level, p.moves, dvs, statExp) }));
 }

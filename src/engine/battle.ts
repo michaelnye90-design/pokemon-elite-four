@@ -261,8 +261,9 @@ function cureStatus(pokemon: Pokemon) {
   const status = pokemon.status;
   pokemon.cureStatus();
   pokemon.removeVolatile('residualdmg'); // Toxic counter
-  // Gen 1 leaves the paralysis/burn stat drop in place after a cure until
-  // the stat is recalculated; restore it straight away instead.
+  // Showdown leaves the paralysis/burn stat drop in place after a cure. The
+  // cartridge copies the party stats back (which also drops the effect of any
+  // stat stages); restore the stat and keep the stages.
   if (pokemon.modifiedStats && pokemon.isActive) {
     if (status === 'par') recalcStat(pokemon, 'spe');
     if (status === 'brn') recalcStat(pokemon, 'atk');
