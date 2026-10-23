@@ -1,0 +1,142 @@
+{
+  "game": "Yellow",
+  "sourcesDoc": "docs/data-sources/gen1-elite-four.md",
+  "trainerPokemon": {
+    "dvs": { "hp": 8, "atk": 9, "def": 8, "spe": 8, "spc": 8 },
+    "statExp": 0
+  },
+  "trainers": [
+    {
+      "id": "lorelei",
+      "name": "Lorelei",
+      "title": "Elite Four",
+      "ai": {
+        "usesPerPokemon": 2,
+        "rules": [{ "rollBelow": 128, "hpBelowFraction": 5, "action": { "type": "item", "item": "superpotion" } }]
+      },
+      "teams": [
+        {
+          "id": "default",
+          "pokemon": [
+            { "species": "Dewgong", "level": 54, "moves": ["bubblebeam", "aurorabeam", "rest", "takedown"] },
+            { "species": "Cloyster", "level": 53, "moves": ["supersonic", "clamp", "icebeam", "spikecannon"] },
+            { "species": "Slowbro", "level": 54, "moves": ["psychic", "surf", "withdraw", "amnesia"] },
+            { "species": "Jynx", "level": 56, "moves": ["doubleslap", "icepunch", "lovelykiss", "thrash"] },
+            { "species": "Lapras", "level": 56, "moves": ["bodyslam", "confuseray", "blizzard", "hydropump"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bruno",
+      "name": "Bruno",
+      "title": "Elite Four",
+      "ai": {
+        "usesPerPokemon": 2,
+        "rules": [{ "rollBelow": 64, "action": { "type": "item", "item": "xdefend" } }]
+      },
+      "teams": [
+        {
+          "id": "default",
+          "pokemon": [
+            { "species": "Onix", "level": 53, "moves": ["rockslide", "screech", "slam", "dig"] },
+            { "species": "Hitmonchan", "level": 55, "moves": ["icepunch", "thunderpunch", "firepunch", "doubleteam"] },
+            { "species": "Hitmonlee", "level": 55, "moves": ["doublekick", "megakick", "highjumpkick", "doubleteam"] },
+            { "species": "Onix", "level": 56, "moves": ["rockslide", "screech", "slam", "earthquake"] },
+            { "species": "Machamp", "level": 58, "moves": ["leer", "karatechop", "strength", "submission"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "agatha",
+      "name": "Agatha",
+      "title": "Elite Four",
+      "ai": {
+        "usesPerPokemon": 2,
+        "rules": [
+          { "rollBelow": 20, "action": { "type": "switch" } },
+          { "rollBelow": 128, "hpBelowFraction": 4, "action": { "type": "item", "item": "superpotion" } }
+        ]
+      },
+      "teams": [
+        {
+          "id": "default",
+          "pokemon": [
+            { "species": "Gengar", "level": 56, "moves": ["confuseray", "substitute", "lick", "megadrain"] },
+            { "species": "Golbat", "level": 56, "moves": ["supersonic", "toxic", "wingattack", "leechlife"] },
+            { "species": "Haunter", "level": 55, "moves": ["confuseray", "lick", "hypnosis", "dreameater"] },
+            { "species": "Arbok", "level": 58, "moves": ["wrap", "glare", "screech", "acid"] },
+            { "species": "Gengar", "level": 60, "moves": ["confuseray", "psychic", "hypnosis", "dreameater"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lance",
+      "name": "Lance",
+      "title": "Elite Four",
+      "ai": {
+        "usesPerPokemon": 1,
+        "rules": [{ "rollBelow": 128, "hpBelowFraction": 5, "action": { "type": "item", "item": "hyperpotion" } }]
+      },
+      "teams": [
+        {
+          "id": "default",
+          "pokemon": [
+            { "species": "Gyarados", "level": 58, "moves": ["dragonrage", "leer", "hydropump", "hyperbeam"] },
+            { "species": "Dragonair", "level": 56, "moves": ["thunderwave", "slam", "thunderbolt", "hyperbeam"] },
+            { "species": "Dragonair", "level": 56, "moves": ["bubblebeam", "wrap", "icebeam", "hyperbeam"] },
+            { "species": "Aerodactyl", "level": 60, "moves": ["wingattack", "swift", "fly", "hyperbeam"] },
+            { "species": "Dragonite", "level": 62, "moves": ["blizzard", "fireblast", "thunder", "hyperbeam"] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "champion",
+      "name": "Blue",
+      "title": "Champion",
+      "optional": true,
+      "ai": {
+        "usesPerPokemon": 1,
+        "rules": [{ "rollBelow": 32, "hpBelowFraction": 5, "action": { "type": "item", "item": "fullrestore" } }]
+      },
+      "teams": [
+        {
+          "id": "jolteon",
+          "pokemon": [
+            { "species": "Sandslash", "level": 61, "moves": ["slash", "poisonsting", "earthquake", "furyswipes"] },
+            { "species": "Alakazam", "level": 59, "moves": ["psybeam", "recover", "psychic", "kinesis"] },
+            { "species": "Exeggutor", "level": 61, "moves": ["barrage", "hypnosis", "stomp", "leechseed"] },
+            { "species": "Cloyster", "level": 61, "moves": ["icebeam", "clamp", "aurorabeam", "spikecannon"] },
+            { "species": "Ninetales", "level": 63, "moves": ["confuseray", "tailwhip", "quickattack", "firespin"] },
+            { "species": "Jolteon", "level": 65, "moves": ["pinmissile", "thunderwave", "quickattack", "thunder"] }
+          ]
+        },
+        {
+          "id": "flareon",
+          "pokemon": [
+            { "species": "Sandslash", "level": 61, "moves": ["slash", "poisonsting", "earthquake", "furyswipes"] },
+            { "species": "Alakazam", "level": 59, "moves": ["psybeam", "recover", "psychic", "kinesis"] },
+            { "species": "Exeggutor", "level": 61, "moves": ["barrage", "hypnosis", "stomp", "leechseed"] },
+            { "species": "Magneton", "level": 61, "moves": ["thunderbolt", "thunderwave", "swift", "screech"] },
+            { "species": "Cloyster", "level": 63, "moves": ["icebeam", "clamp", "aurorabeam", "spikecannon"] },
+            { "species": "Flareon", "level": 65, "moves": ["firespin", "reflect", "quickattack", "flamethrower"] }
+          ]
+        },
+        {
+          "id": "vaporeon",
+          "pokemon": [
+            { "species": "Sandslash", "level": 61, "moves": ["slash", "poisonsting", "earthquake", "furyswipes"] },
+            { "species": "Alakazam", "level": 59, "moves": ["psybeam", "recover", "psychic", "kinesis"] },
+            { "species": "Exeggutor", "level": 61, "moves": ["barrage", "hypnosis", "stomp", "leechseed"] },
+            { "species": "Ninetales", "level": 61, "moves": ["confuseray", "tailwhip", "quickattack", "firespin"] },
+            { "species": "Magneton", "level": 63, "moves": ["thunderbolt", "thunderwave", "swift", "screech"] },
+            { "species": "Vaporeon", "level": 65, "moves": ["aurorabeam", "mist", "quickattack", "hydropump"] }
+          ]
+        }
+      ]
+    }
+  ]
+}
