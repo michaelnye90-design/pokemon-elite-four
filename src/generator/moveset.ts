@@ -136,8 +136,16 @@ export function chooseMoves(data: GenData, speciesId: string, level: number, rng
 
   if (wantStatus) take(rng.weighted(statusOptions, (m) => STATUS_WEIGHTS[m.id]).id);
 
-  // 4. Still short (few viable attacks): top up with anything left, status moves first.
+  // 4. Still short (few attack types): useful status moves, then a second
+  // attack of a type already covered, then anything else.
+  const secondAttacks = learnable
+    .map((m) => ({ id: m.id, score: attackScore(m, species) }))
+    .filter((a) => a.score >= MIN_ATTACK_SCORE)
+    .sort((a, b) => b.score - a.score)
+    .map((a) => a.id);
   const leftovers = [
+    ...statusOptions.filter((m) => STATUS_WEIGHTS[m.id] >= 3).map((m) => m.id),
+    ...secondAttacks,
     ...statusOptions.map((m) => m.id),
     ...attacks.map((a) => a.move.id),
     ...learnable.filter((m) => m.category === 'Status').map((m) => m.id),

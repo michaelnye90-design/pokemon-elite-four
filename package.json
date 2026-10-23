@@ -23,6 +23,7 @@
     "vitest": "^5.0.5"
   },
   "dependencies": {
+    "@pkmn/img": "^0.3.4",
     "@pkmn/sim": "^0.10.11"
   }
 }

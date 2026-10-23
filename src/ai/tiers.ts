@@ -27,9 +27,10 @@ function usableMoves(state: AIState): MoveOption[] {
   return moves.length > 0 ? moves.map((m) => ({ slot: m.slot, id: m.id })) : [{ slot: 0, id: 'struggle' }];
 }
 
+/** A replacement after a knockout: the best matchup, or (like the original game's trainers) the next in party order. */
 function forcedSwitch(state: AIState, smart: boolean): Action {
   const options = state.battle.legalActions(state.side).switches;
-  const partyIndex = smart ? bestSwitch(state.battle, state.side)! : state.rng.pick(options);
+  const partyIndex = smart ? bestSwitch(state.battle, state.side)! : options[0];
   return { type: 'switch', partyIndex };
 }
 
@@ -78,7 +79,7 @@ export class GreedyAI implements AIStrategy {
   readonly tier: TierId = 'normal';
 
   chooseAction(state: AIState): Action {
-    if (state.battle.legalActions(state.side).forceSwitch) return forcedSwitch(state, true);
+    if (state.battle.legalActions(state.side).forceSwitch) return forcedSwitch(state, false);
     const options = usableMoves(state);
     // Strongly favour the best expected damage (super-effective moves score
     // higher automatically), with a little randomness, and an occasional
