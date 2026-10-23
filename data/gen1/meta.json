@@ -1,0 +1,13 @@
+{
+  "gen": 1,
+  "source": "Exported from @pkmn/data and @pkmn/dex (Pokémon Showdown data)",
+  "versions": {
+    "@pkmn/data": "0.10.11",
+    "@pkmn/dex": "0.10.11"
+  },
+  "counts": {
+    "species": 151,
+    "moves": 165,
+    "types": 15
+  }
+}

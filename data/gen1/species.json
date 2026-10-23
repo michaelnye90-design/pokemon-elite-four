@@ -1,0 +1,3085 @@
+[
+  {
+    "num": 1,
+    "id": "bulbasaur",
+    "name": "Bulbasaur",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 45,
+      "atk": 49,
+      "def": 49,
+      "spc": 65,
+      "spe": 45
+    },
+    "bst": 253,
+    "prevo": null,
+    "evos": [
+      "ivysaur"
+    ],
+    "tags": []
+  },
+  {
+    "num": 2,
+    "id": "ivysaur",
+    "name": "Ivysaur",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "atk": 62,
+      "def": 63,
+      "spc": 80,
+      "spe": 60
+    },
+    "bst": 325,
+    "prevo": "bulbasaur",
+    "evos": [
+      "venusaur"
+    ],
+    "tags": []
+  },
+  {
+    "num": 3,
+    "id": "venusaur",
+    "name": "Venusaur",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "atk": 82,
+      "def": 83,
+      "spc": 100,
+      "spe": 80
+    },
+    "bst": 425,
+    "prevo": "ivysaur",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 4,
+    "id": "charmander",
+    "name": "Charmander",
+    "types": [
+      "Fire"
+    ],
+    "baseStats": {
+      "hp": 39,
+      "atk": 52,
+      "def": 43,
+      "spc": 50,
+      "spe": 65
+    },
+    "bst": 249,
+    "prevo": null,
+    "evos": [
+      "charmeleon"
+    ],
+    "tags": []
+  },
+  {
+    "num": 5,
+    "id": "charmeleon",
+    "name": "Charmeleon",
+    "types": [
+      "Fire"
+    ],
+    "baseStats": {
+      "hp": 58,
+      "atk": 64,
+      "def": 58,
+      "spc": 65,
+      "spe": 80
+    },
+    "bst": 325,
+    "prevo": "charmander",
+    "evos": [
+      "charizard"
+    ],
+    "tags": []
+  },
+  {
+    "num": 6,
+    "id": "charizard",
+    "name": "Charizard",
+    "types": [
+      "Fire",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 78,
+      "atk": 84,
+      "def": 78,
+      "spc": 85,
+      "spe": 100
+    },
+    "bst": 425,
+    "prevo": "charmeleon",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 7,
+    "id": "squirtle",
+    "name": "Squirtle",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 44,
+      "atk": 48,
+      "def": 65,
+      "spc": 50,
+      "spe": 43
+    },
+    "bst": 250,
+    "prevo": null,
+    "evos": [
+      "wartortle"
+    ],
+    "tags": []
+  },
+  {
+    "num": 8,
+    "id": "wartortle",
+    "name": "Wartortle",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 59,
+      "atk": 63,
+      "def": 80,
+      "spc": 65,
+      "spe": 58
+    },
+    "bst": 325,
+    "prevo": "squirtle",
+    "evos": [
+      "blastoise"
+    ],
+    "tags": []
+  },
+  {
+    "num": 9,
+    "id": "blastoise",
+    "name": "Blastoise",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 79,
+      "atk": 83,
+      "def": 100,
+      "spc": 85,
+      "spe": 78
+    },
+    "bst": 425,
+    "prevo": "wartortle",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 10,
+    "id": "caterpie",
+    "name": "Caterpie",
+    "types": [
+      "Bug"
+    ],
+    "baseStats": {
+      "hp": 45,
+      "atk": 30,
+      "def": 35,
+      "spc": 20,
+      "spe": 45
+    },
+    "bst": 175,
+    "prevo": null,
+    "evos": [
+      "metapod"
+    ],
+    "tags": []
+  },
+  {
+    "num": 11,
+    "id": "metapod",
+    "name": "Metapod",
+    "types": [
+      "Bug"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "atk": 20,
+      "def": 55,
+      "spc": 25,
+      "spe": 30
+    },
+    "bst": 180,
+    "prevo": "caterpie",
+    "evos": [
+      "butterfree"
+    ],
+    "tags": []
+  },
+  {
+    "num": 12,
+    "id": "butterfree",
+    "name": "Butterfree",
+    "types": [
+      "Bug",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "atk": 45,
+      "def": 50,
+      "spc": 80,
+      "spe": 70
+    },
+    "bst": 305,
+    "prevo": "metapod",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 13,
+    "id": "weedle",
+    "name": "Weedle",
+    "types": [
+      "Bug",
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "atk": 35,
+      "def": 30,
+      "spc": 20,
+      "spe": 50
+    },
+    "bst": 175,
+    "prevo": null,
+    "evos": [
+      "kakuna"
+    ],
+    "tags": []
+  },
+  {
+    "num": 14,
+    "id": "kakuna",
+    "name": "Kakuna",
+    "types": [
+      "Bug",
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 45,
+      "atk": 25,
+      "def": 50,
+      "spc": 25,
+      "spe": 35
+    },
+    "bst": 180,
+    "prevo": "weedle",
+    "evos": [
+      "beedrill"
+    ],
+    "tags": []
+  },
+  {
+    "num": 15,
+    "id": "beedrill",
+    "name": "Beedrill",
+    "types": [
+      "Bug",
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "atk": 80,
+      "def": 40,
+      "spc": 45,
+      "spe": 75
+    },
+    "bst": 305,
+    "prevo": "kakuna",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 16,
+    "id": "pidgey",
+    "name": "Pidgey",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "atk": 45,
+      "def": 40,
+      "spc": 35,
+      "spe": 56
+    },
+    "bst": 216,
+    "prevo": null,
+    "evos": [
+      "pidgeotto"
+    ],
+    "tags": []
+  },
+  {
+    "num": 17,
+    "id": "pidgeotto",
+    "name": "Pidgeotto",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 63,
+      "atk": 60,
+      "def": 55,
+      "spc": 50,
+      "spe": 71
+    },
+    "bst": 299,
+    "prevo": "pidgey",
+    "evos": [
+      "pidgeot"
+    ],
+    "tags": []
+  },
+  {
+    "num": 18,
+    "id": "pidgeot",
+    "name": "Pidgeot",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 83,
+      "atk": 80,
+      "def": 75,
+      "spc": 70,
+      "spe": 91
+    },
+    "bst": 399,
+    "prevo": "pidgeotto",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 19,
+    "id": "rattata",
+    "name": "Rattata",
+    "types": [
+      "Normal"
+    ],
+    "baseStats": {
+      "hp": 30,
+      "atk": 56,
+      "def": 35,
+      "spc": 25,
+      "spe": 72
+    },
+    "bst": 218,
+    "prevo": null,
+    "evos": [
+      "raticate"
+    ],
+    "tags": []
+  },
+  {
+    "num": 20,
+    "id": "raticate",
+    "name": "Raticate",
+    "types": [
+      "Normal"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "atk": 81,
+      "def": 60,
+      "spc": 50,
+      "spe": 97
+    },
+    "bst": 343,
+    "prevo": "rattata",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 21,
+    "id": "spearow",
+    "name": "Spearow",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "atk": 60,
+      "def": 30,
+      "spc": 31,
+      "spe": 70
+    },
+    "bst": 231,
+    "prevo": null,
+    "evos": [
+      "fearow"
+    ],
+    "tags": []
+  },
+  {
+    "num": 22,
+    "id": "fearow",
+    "name": "Fearow",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "atk": 90,
+      "def": 65,
+      "spc": 61,
+      "spe": 100
+    },
+    "bst": 381,
+    "prevo": "spearow",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 23,
+    "id": "ekans",
+    "name": "Ekans",
+    "types": [
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 35,
+      "atk": 60,
+      "def": 44,
+      "spc": 40,
+      "spe": 55
+    },
+    "bst": 234,
+    "prevo": null,
+    "evos": [
+      "arbok"
+    ],
+    "tags": []
+  },
+  {
+    "num": 24,
+    "id": "arbok",
+    "name": "Arbok",
+    "types": [
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "atk": 85,
+      "def": 69,
+      "spc": 65,
+      "spe": 80
+    },
+    "bst": 359,
+    "prevo": "ekans",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 25,
+    "id": "pikachu",
+    "name": "Pikachu",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "hp": 35,
+      "atk": 55,
+      "def": 30,
+      "spc": 50,
+      "spe": 90
+    },
+    "bst": 260,
+    "prevo": null,
+    "evos": [
+      "raichu"
+    ],
+    "tags": []
+  },
+  {
+    "num": 26,
+    "id": "raichu",
+    "name": "Raichu",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "atk": 90,
+      "def": 55,
+      "spc": 90,
+      "spe": 100
+    },
+    "bst": 395,
+    "prevo": "pikachu",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 27,
+    "id": "sandshrew",
+    "name": "Sandshrew",
+    "types": [
+      "Ground"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "atk": 75,
+      "def": 85,
+      "spc": 30,
+      "spe": 40
+    },
+    "bst": 280,
+    "prevo": null,
+    "evos": [
+      "sandslash"
+    ],
+    "tags": []
+  },
+  {
+    "num": 28,
+    "id": "sandslash",
+    "name": "Sandslash",
+    "types": [
+      "Ground"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "atk": 100,
+      "def": 110,
+      "spc": 55,
+      "spe": 65
+    },
+    "bst": 405,
+    "prevo": "sandshrew",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 29,
+    "id": "nidoranf",
+    "name": "Nidoran-F",
+    "types": [
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "atk": 47,
+      "def": 52,
+      "spc": 40,
+      "spe": 41
+    },
+    "bst": 235,
+    "prevo": null,
+    "evos": [
+      "nidorina"
+    ],
+    "tags": []
+  },
+  {
+    "num": 30,
+    "id": "nidorina",
+    "name": "Nidorina",
+    "types": [
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "atk": 62,
+      "def": 67,
+      "spc": 55,
+      "spe": 56
+    },
+    "bst": 310,
+    "prevo": "nidoranf",
+    "evos": [
+      "nidoqueen"
+    ],
+    "tags": []
+  },
+  {
+    "num": 31,
+    "id": "nidoqueen",
+    "name": "Nidoqueen",
+    "types": [
+      "Poison",
+      "Ground"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "atk": 82,
+      "def": 87,
+      "spc": 75,
+      "spe": 76
+    },
+    "bst": 410,
+    "prevo": "nidorina",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 32,
+    "id": "nidoranm",
+    "name": "Nidoran-M",
+    "types": [
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 46,
+      "atk": 57,
+      "def": 40,
+      "spc": 40,
+      "spe": 50
+    },
+    "bst": 233,
+    "prevo": null,
+    "evos": [
+      "nidorino"
+    ],
+    "tags": []
+  },
+  {
+    "num": 33,
+    "id": "nidorino",
+    "name": "Nidorino",
+    "types": [
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 61,
+      "atk": 72,
+      "def": 57,
+      "spc": 55,
+      "spe": 65
+    },
+    "bst": 310,
+    "prevo": "nidoranm",
+    "evos": [
+      "nidoking"
+    ],
+    "tags": []
+  },
+  {
+    "num": 34,
+    "id": "nidoking",
+    "name": "Nidoking",
+    "types": [
+      "Poison",
+      "Ground"
+    ],
+    "baseStats": {
+      "hp": 81,
+      "atk": 92,
+      "def": 77,
+      "spc": 75,
+      "spe": 85
+    },
+    "bst": 410,
+    "prevo": "nidorino",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 35,
+    "id": "clefairy",
+    "name": "Clefairy",
+    "types": [
+      "Normal"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "atk": 45,
+      "def": 48,
+      "spc": 60,
+      "spe": 35
+    },
+    "bst": 258,
+    "prevo": null,
+    "evos": [
+      "clefable"
+    ],
+    "tags": []
+  },
+  {
+    "num": 36,
+    "id": "clefable",
+    "name": "Clefable",
+    "types": [
+      "Normal"
+    ],
+    "baseStats": {
+      "hp": 95,
+      "atk": 70,
+      "def": 73,
+      "spc": 85,
+      "spe": 60
+    },
+    "bst": 383,
+    "prevo": "clefairy",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 37,
+    "id": "vulpix",
+    "name": "Vulpix",
+    "types": [
+      "Fire"
+    ],
+    "baseStats": {
+      "hp": 38,
+      "atk": 41,
+      "def": 40,
+      "spc": 65,
+      "spe": 65
+    },
+    "bst": 249,
+    "prevo": null,
+    "evos": [
+      "ninetales"
+    ],
+    "tags": []
+  },
+  {
+    "num": 38,
+    "id": "ninetales",
+    "name": "Ninetales",
+    "types": [
+      "Fire"
+    ],
+    "baseStats": {
+      "hp": 73,
+      "atk": 76,
+      "def": 75,
+      "spc": 100,
+      "spe": 100
+    },
+    "bst": 424,
+    "prevo": "vulpix",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 39,
+    "id": "jigglypuff",
+    "name": "Jigglypuff",
+    "types": [
+      "Normal"
+    ],
+    "baseStats": {
+      "hp": 115,
+      "atk": 45,
+      "def": 20,
+      "spc": 25,
+      "spe": 20
+    },
+    "bst": 225,
+    "prevo": null,
+    "evos": [
+      "wigglytuff"
+    ],
+    "tags": []
+  },
+  {
+    "num": 40,
+    "id": "wigglytuff",
+    "name": "Wigglytuff",
+    "types": [
+      "Normal"
+    ],
+    "baseStats": {
+      "hp": 140,
+      "atk": 70,
+      "def": 45,
+      "spc": 50,
+      "spe": 45
+    },
+    "bst": 350,
+    "prevo": "jigglypuff",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 41,
+    "id": "zubat",
+    "name": "Zubat",
+    "types": [
+      "Poison",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "atk": 45,
+      "def": 35,
+      "spc": 40,
+      "spe": 55
+    },
+    "bst": 215,
+    "prevo": null,
+    "evos": [
+      "golbat"
+    ],
+    "tags": []
+  },
+  {
+    "num": 42,
+    "id": "golbat",
+    "name": "Golbat",
+    "types": [
+      "Poison",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "atk": 80,
+      "def": 70,
+      "spc": 75,
+      "spe": 90
+    },
+    "bst": 390,
+    "prevo": "zubat",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 43,
+    "id": "oddish",
+    "name": "Oddish",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 45,
+      "atk": 50,
+      "def": 55,
+      "spc": 75,
+      "spe": 30
+    },
+    "bst": 255,
+    "prevo": null,
+    "evos": [
+      "gloom"
+    ],
+    "tags": []
+  },
+  {
+    "num": 44,
+    "id": "gloom",
+    "name": "Gloom",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "atk": 65,
+      "def": 70,
+      "spc": 85,
+      "spe": 40
+    },
+    "bst": 320,
+    "prevo": "oddish",
+    "evos": [
+      "vileplume"
+    ],
+    "tags": []
+  },
+  {
+    "num": 45,
+    "id": "vileplume",
+    "name": "Vileplume",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "atk": 80,
+      "def": 85,
+      "spc": 100,
+      "spe": 50
+    },
+    "bst": 390,
+    "prevo": "gloom",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 46,
+    "id": "paras",
+    "name": "Paras",
+    "types": [
+      "Bug",
+      "Grass"
+    ],
+    "baseStats": {
+      "hp": 35,
+      "atk": 70,
+      "def": 55,
+      "spc": 55,
+      "spe": 25
+    },
+    "bst": 240,
+    "prevo": null,
+    "evos": [
+      "parasect"
+    ],
+    "tags": []
+  },
+  {
+    "num": 47,
+    "id": "parasect",
+    "name": "Parasect",
+    "types": [
+      "Bug",
+      "Grass"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "atk": 95,
+      "def": 80,
+      "spc": 80,
+      "spe": 30
+    },
+    "bst": 345,
+    "prevo": "paras",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 48,
+    "id": "venonat",
+    "name": "Venonat",
+    "types": [
+      "Bug",
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "atk": 55,
+      "def": 50,
+      "spc": 40,
+      "spe": 45
+    },
+    "bst": 250,
+    "prevo": null,
+    "evos": [
+      "venomoth"
+    ],
+    "tags": []
+  },
+  {
+    "num": 49,
+    "id": "venomoth",
+    "name": "Venomoth",
+    "types": [
+      "Bug",
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "atk": 65,
+      "def": 60,
+      "spc": 90,
+      "spe": 90
+    },
+    "bst": 375,
+    "prevo": "venonat",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 50,
+    "id": "diglett",
+    "name": "Diglett",
+    "types": [
+      "Ground"
+    ],
+    "baseStats": {
+      "hp": 10,
+      "atk": 55,
+      "def": 25,
+      "spc": 45,
+      "spe": 95
+    },
+    "bst": 230,
+    "prevo": null,
+    "evos": [
+      "dugtrio"
+    ],
+    "tags": []
+  },
+  {
+    "num": 51,
+    "id": "dugtrio",
+    "name": "Dugtrio",
+    "types": [
+      "Ground"
+    ],
+    "baseStats": {
+      "hp": 35,
+      "atk": 80,
+      "def": 50,
+      "spc": 70,
+      "spe": 120
+    },
+    "bst": 355,
+    "prevo": "diglett",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 52,
+    "id": "meowth",
+    "name": "Meowth",
+    "types": [
+      "Normal"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "atk": 45,
+      "def": 35,
+      "spc": 40,
+      "spe": 90
+    },
+    "bst": 250,
+    "prevo": null,
+    "evos": [
+      "persian"
+    ],
+    "tags": []
+  },
+  {
+    "num": 53,
+    "id": "persian",
+    "name": "Persian",
+    "types": [
+      "Normal"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "atk": 70,
+      "def": 60,
+      "spc": 65,
+      "spe": 115
+    },
+    "bst": 375,
+    "prevo": "meowth",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 54,
+    "id": "psyduck",
+    "name": "Psyduck",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "atk": 52,
+      "def": 48,
+      "spc": 50,
+      "spe": 55
+    },
+    "bst": 255,
+    "prevo": null,
+    "evos": [
+      "golduck"
+    ],
+    "tags": []
+  },
+  {
+    "num": 55,
+    "id": "golduck",
+    "name": "Golduck",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "atk": 82,
+      "def": 78,
+      "spc": 80,
+      "spe": 85
+    },
+    "bst": 405,
+    "prevo": "psyduck",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 56,
+    "id": "mankey",
+    "name": "Mankey",
+    "types": [
+      "Fighting"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "atk": 80,
+      "def": 35,
+      "spc": 35,
+      "spe": 70
+    },
+    "bst": 260,
+    "prevo": null,
+    "evos": [
+      "primeape"
+    ],
+    "tags": []
+  },
+  {
+    "num": 57,
+    "id": "primeape",
+    "name": "Primeape",
+    "types": [
+      "Fighting"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "atk": 105,
+      "def": 60,
+      "spc": 60,
+      "spe": 95
+    },
+    "bst": 385,
+    "prevo": "mankey",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 58,
+    "id": "growlithe",
+    "name": "Growlithe",
+    "types": [
+      "Fire"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "atk": 70,
+      "def": 45,
+      "spc": 50,
+      "spe": 60
+    },
+    "bst": 280,
+    "prevo": null,
+    "evos": [
+      "arcanine"
+    ],
+    "tags": []
+  },
+  {
+    "num": 59,
+    "id": "arcanine",
+    "name": "Arcanine",
+    "types": [
+      "Fire"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "atk": 110,
+      "def": 80,
+      "spc": 80,
+      "spe": 95
+    },
+    "bst": 455,
+    "prevo": "growlithe",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 60,
+    "id": "poliwag",
+    "name": "Poliwag",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "atk": 50,
+      "def": 40,
+      "spc": 40,
+      "spe": 90
+    },
+    "bst": 260,
+    "prevo": null,
+    "evos": [
+      "poliwhirl"
+    ],
+    "tags": []
+  },
+  {
+    "num": 61,
+    "id": "poliwhirl",
+    "name": "Poliwhirl",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "atk": 65,
+      "def": 65,
+      "spc": 50,
+      "spe": 90
+    },
+    "bst": 335,
+    "prevo": "poliwag",
+    "evos": [
+      "poliwrath"
+    ],
+    "tags": []
+  },
+  {
+    "num": 62,
+    "id": "poliwrath",
+    "name": "Poliwrath",
+    "types": [
+      "Water",
+      "Fighting"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "atk": 85,
+      "def": 95,
+      "spc": 70,
+      "spe": 70
+    },
+    "bst": 410,
+    "prevo": "poliwhirl",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 63,
+    "id": "abra",
+    "name": "Abra",
+    "types": [
+      "Psychic"
+    ],
+    "baseStats": {
+      "hp": 25,
+      "atk": 20,
+      "def": 15,
+      "spc": 105,
+      "spe": 90
+    },
+    "bst": 255,
+    "prevo": null,
+    "evos": [
+      "kadabra"
+    ],
+    "tags": []
+  },
+  {
+    "num": 64,
+    "id": "kadabra",
+    "name": "Kadabra",
+    "types": [
+      "Psychic"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "atk": 35,
+      "def": 30,
+      "spc": 120,
+      "spe": 105
+    },
+    "bst": 330,
+    "prevo": "abra",
+    "evos": [
+      "alakazam"
+    ],
+    "tags": []
+  },
+  {
+    "num": 65,
+    "id": "alakazam",
+    "name": "Alakazam",
+    "types": [
+      "Psychic"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "atk": 50,
+      "def": 45,
+      "spc": 135,
+      "spe": 120
+    },
+    "bst": 405,
+    "prevo": "kadabra",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 66,
+    "id": "machop",
+    "name": "Machop",
+    "types": [
+      "Fighting"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "atk": 80,
+      "def": 50,
+      "spc": 35,
+      "spe": 35
+    },
+    "bst": 270,
+    "prevo": null,
+    "evos": [
+      "machoke"
+    ],
+    "tags": []
+  },
+  {
+    "num": 67,
+    "id": "machoke",
+    "name": "Machoke",
+    "types": [
+      "Fighting"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "atk": 100,
+      "def": 70,
+      "spc": 50,
+      "spe": 45
+    },
+    "bst": 345,
+    "prevo": "machop",
+    "evos": [
+      "machamp"
+    ],
+    "tags": []
+  },
+  {
+    "num": 68,
+    "id": "machamp",
+    "name": "Machamp",
+    "types": [
+      "Fighting"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "atk": 130,
+      "def": 80,
+      "spc": 65,
+      "spe": 55
+    },
+    "bst": 420,
+    "prevo": "machoke",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 69,
+    "id": "bellsprout",
+    "name": "Bellsprout",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "atk": 75,
+      "def": 35,
+      "spc": 70,
+      "spe": 40
+    },
+    "bst": 270,
+    "prevo": null,
+    "evos": [
+      "weepinbell"
+    ],
+    "tags": []
+  },
+  {
+    "num": 70,
+    "id": "weepinbell",
+    "name": "Weepinbell",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "atk": 90,
+      "def": 50,
+      "spc": 85,
+      "spe": 55
+    },
+    "bst": 345,
+    "prevo": "bellsprout",
+    "evos": [
+      "victreebel"
+    ],
+    "tags": []
+  },
+  {
+    "num": 71,
+    "id": "victreebel",
+    "name": "Victreebel",
+    "types": [
+      "Grass",
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "atk": 105,
+      "def": 65,
+      "spc": 100,
+      "spe": 70
+    },
+    "bst": 420,
+    "prevo": "weepinbell",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 72,
+    "id": "tentacool",
+    "name": "Tentacool",
+    "types": [
+      "Water",
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "atk": 40,
+      "def": 35,
+      "spc": 100,
+      "spe": 70
+    },
+    "bst": 285,
+    "prevo": null,
+    "evos": [
+      "tentacruel"
+    ],
+    "tags": []
+  },
+  {
+    "num": 73,
+    "id": "tentacruel",
+    "name": "Tentacruel",
+    "types": [
+      "Water",
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "atk": 70,
+      "def": 65,
+      "spc": 120,
+      "spe": 100
+    },
+    "bst": 435,
+    "prevo": "tentacool",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 74,
+    "id": "geodude",
+    "name": "Geodude",
+    "types": [
+      "Rock",
+      "Ground"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "atk": 80,
+      "def": 100,
+      "spc": 30,
+      "spe": 20
+    },
+    "bst": 270,
+    "prevo": null,
+    "evos": [
+      "graveler"
+    ],
+    "tags": []
+  },
+  {
+    "num": 75,
+    "id": "graveler",
+    "name": "Graveler",
+    "types": [
+      "Rock",
+      "Ground"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "atk": 95,
+      "def": 115,
+      "spc": 45,
+      "spe": 35
+    },
+    "bst": 345,
+    "prevo": "geodude",
+    "evos": [
+      "golem"
+    ],
+    "tags": []
+  },
+  {
+    "num": 76,
+    "id": "golem",
+    "name": "Golem",
+    "types": [
+      "Rock",
+      "Ground"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "atk": 110,
+      "def": 130,
+      "spc": 55,
+      "spe": 45
+    },
+    "bst": 420,
+    "prevo": "graveler",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 77,
+    "id": "ponyta",
+    "name": "Ponyta",
+    "types": [
+      "Fire"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "atk": 85,
+      "def": 55,
+      "spc": 65,
+      "spe": 90
+    },
+    "bst": 345,
+    "prevo": null,
+    "evos": [
+      "rapidash"
+    ],
+    "tags": []
+  },
+  {
+    "num": 78,
+    "id": "rapidash",
+    "name": "Rapidash",
+    "types": [
+      "Fire"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "atk": 100,
+      "def": 70,
+      "spc": 80,
+      "spe": 105
+    },
+    "bst": 420,
+    "prevo": "ponyta",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 79,
+    "id": "slowpoke",
+    "name": "Slowpoke",
+    "types": [
+      "Water",
+      "Psychic"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "atk": 65,
+      "def": 65,
+      "spc": 40,
+      "spe": 15
+    },
+    "bst": 275,
+    "prevo": null,
+    "evos": [
+      "slowbro"
+    ],
+    "tags": []
+  },
+  {
+    "num": 80,
+    "id": "slowbro",
+    "name": "Slowbro",
+    "types": [
+      "Water",
+      "Psychic"
+    ],
+    "baseStats": {
+      "hp": 95,
+      "atk": 75,
+      "def": 110,
+      "spc": 80,
+      "spe": 30
+    },
+    "bst": 390,
+    "prevo": "slowpoke",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 81,
+    "id": "magnemite",
+    "name": "Magnemite",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "hp": 25,
+      "atk": 35,
+      "def": 70,
+      "spc": 95,
+      "spe": 45
+    },
+    "bst": 270,
+    "prevo": null,
+    "evos": [
+      "magneton"
+    ],
+    "tags": []
+  },
+  {
+    "num": 82,
+    "id": "magneton",
+    "name": "Magneton",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "atk": 60,
+      "def": 95,
+      "spc": 120,
+      "spe": 70
+    },
+    "bst": 395,
+    "prevo": "magnemite",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 83,
+    "id": "farfetchd",
+    "name": "Farfetch’d",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 52,
+      "atk": 65,
+      "def": 55,
+      "spc": 58,
+      "spe": 60
+    },
+    "bst": 290,
+    "prevo": null,
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 84,
+    "id": "doduo",
+    "name": "Doduo",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 35,
+      "atk": 85,
+      "def": 45,
+      "spc": 35,
+      "spe": 75
+    },
+    "bst": 275,
+    "prevo": null,
+    "evos": [
+      "dodrio"
+    ],
+    "tags": []
+  },
+  {
+    "num": 85,
+    "id": "dodrio",
+    "name": "Dodrio",
+    "types": [
+      "Normal",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "atk": 110,
+      "def": 70,
+      "spc": 60,
+      "spe": 100
+    },
+    "bst": 400,
+    "prevo": "doduo",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 86,
+    "id": "seel",
+    "name": "Seel",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "atk": 45,
+      "def": 55,
+      "spc": 70,
+      "spe": 45
+    },
+    "bst": 280,
+    "prevo": null,
+    "evos": [
+      "dewgong"
+    ],
+    "tags": []
+  },
+  {
+    "num": 87,
+    "id": "dewgong",
+    "name": "Dewgong",
+    "types": [
+      "Water",
+      "Ice"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "atk": 70,
+      "def": 80,
+      "spc": 95,
+      "spe": 70
+    },
+    "bst": 405,
+    "prevo": "seel",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 88,
+    "id": "grimer",
+    "name": "Grimer",
+    "types": [
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "atk": 80,
+      "def": 50,
+      "spc": 40,
+      "spe": 25
+    },
+    "bst": 275,
+    "prevo": null,
+    "evos": [
+      "muk"
+    ],
+    "tags": []
+  },
+  {
+    "num": 89,
+    "id": "muk",
+    "name": "Muk",
+    "types": [
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 105,
+      "atk": 105,
+      "def": 75,
+      "spc": 65,
+      "spe": 50
+    },
+    "bst": 400,
+    "prevo": "grimer",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 90,
+    "id": "shellder",
+    "name": "Shellder",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 30,
+      "atk": 65,
+      "def": 100,
+      "spc": 45,
+      "spe": 40
+    },
+    "bst": 280,
+    "prevo": null,
+    "evos": [
+      "cloyster"
+    ],
+    "tags": []
+  },
+  {
+    "num": 91,
+    "id": "cloyster",
+    "name": "Cloyster",
+    "types": [
+      "Water",
+      "Ice"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "atk": 95,
+      "def": 180,
+      "spc": 85,
+      "spe": 70
+    },
+    "bst": 480,
+    "prevo": "shellder",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 92,
+    "id": "gastly",
+    "name": "Gastly",
+    "types": [
+      "Ghost",
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 30,
+      "atk": 35,
+      "def": 30,
+      "spc": 100,
+      "spe": 80
+    },
+    "bst": 275,
+    "prevo": null,
+    "evos": [
+      "haunter"
+    ],
+    "tags": []
+  },
+  {
+    "num": 93,
+    "id": "haunter",
+    "name": "Haunter",
+    "types": [
+      "Ghost",
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 45,
+      "atk": 50,
+      "def": 45,
+      "spc": 115,
+      "spe": 95
+    },
+    "bst": 350,
+    "prevo": "gastly",
+    "evos": [
+      "gengar"
+    ],
+    "tags": []
+  },
+  {
+    "num": 94,
+    "id": "gengar",
+    "name": "Gengar",
+    "types": [
+      "Ghost",
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "atk": 65,
+      "def": 60,
+      "spc": 130,
+      "spe": 110
+    },
+    "bst": 425,
+    "prevo": "haunter",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 95,
+    "id": "onix",
+    "name": "Onix",
+    "types": [
+      "Rock",
+      "Ground"
+    ],
+    "baseStats": {
+      "hp": 35,
+      "atk": 45,
+      "def": 160,
+      "spc": 30,
+      "spe": 70
+    },
+    "bst": 340,
+    "prevo": null,
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 96,
+    "id": "drowzee",
+    "name": "Drowzee",
+    "types": [
+      "Psychic"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "atk": 48,
+      "def": 45,
+      "spc": 90,
+      "spe": 42
+    },
+    "bst": 285,
+    "prevo": null,
+    "evos": [
+      "hypno"
+    ],
+    "tags": []
+  },
+  {
+    "num": 97,
+    "id": "hypno",
+    "name": "Hypno",
+    "types": [
+      "Psychic"
+    ],
+    "baseStats": {
+      "hp": 85,
+      "atk": 73,
+      "def": 70,
+      "spc": 115,
+      "spe": 67
+    },
+    "bst": 410,
+    "prevo": "drowzee",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 98,
+    "id": "krabby",
+    "name": "Krabby",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 30,
+      "atk": 105,
+      "def": 90,
+      "spc": 25,
+      "spe": 50
+    },
+    "bst": 300,
+    "prevo": null,
+    "evos": [
+      "kingler"
+    ],
+    "tags": []
+  },
+  {
+    "num": 99,
+    "id": "kingler",
+    "name": "Kingler",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "atk": 130,
+      "def": 115,
+      "spc": 50,
+      "spe": 75
+    },
+    "bst": 425,
+    "prevo": "krabby",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 100,
+    "id": "voltorb",
+    "name": "Voltorb",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "atk": 30,
+      "def": 50,
+      "spc": 55,
+      "spe": 100
+    },
+    "bst": 275,
+    "prevo": null,
+    "evos": [
+      "electrode"
+    ],
+    "tags": []
+  },
+  {
+    "num": 101,
+    "id": "electrode",
+    "name": "Electrode",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "atk": 50,
+      "def": 70,
+      "spc": 80,
+      "spe": 140
+    },
+    "bst": 400,
+    "prevo": "voltorb",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 102,
+    "id": "exeggcute",
+    "name": "Exeggcute",
+    "types": [
+      "Grass",
+      "Psychic"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "atk": 40,
+      "def": 80,
+      "spc": 60,
+      "spe": 40
+    },
+    "bst": 280,
+    "prevo": null,
+    "evos": [
+      "exeggutor"
+    ],
+    "tags": []
+  },
+  {
+    "num": 103,
+    "id": "exeggutor",
+    "name": "Exeggutor",
+    "types": [
+      "Grass",
+      "Psychic"
+    ],
+    "baseStats": {
+      "hp": 95,
+      "atk": 95,
+      "def": 85,
+      "spc": 125,
+      "spe": 55
+    },
+    "bst": 455,
+    "prevo": "exeggcute",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 104,
+    "id": "cubone",
+    "name": "Cubone",
+    "types": [
+      "Ground"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "atk": 50,
+      "def": 95,
+      "spc": 40,
+      "spe": 35
+    },
+    "bst": 270,
+    "prevo": null,
+    "evos": [
+      "marowak"
+    ],
+    "tags": []
+  },
+  {
+    "num": 105,
+    "id": "marowak",
+    "name": "Marowak",
+    "types": [
+      "Ground"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "atk": 80,
+      "def": 110,
+      "spc": 50,
+      "spe": 45
+    },
+    "bst": 345,
+    "prevo": "cubone",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 106,
+    "id": "hitmonlee",
+    "name": "Hitmonlee",
+    "types": [
+      "Fighting"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "atk": 120,
+      "def": 53,
+      "spc": 35,
+      "spe": 87
+    },
+    "bst": 345,
+    "prevo": null,
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 107,
+    "id": "hitmonchan",
+    "name": "Hitmonchan",
+    "types": [
+      "Fighting"
+    ],
+    "baseStats": {
+      "hp": 50,
+      "atk": 105,
+      "def": 79,
+      "spc": 35,
+      "spe": 76
+    },
+    "bst": 345,
+    "prevo": null,
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 108,
+    "id": "lickitung",
+    "name": "Lickitung",
+    "types": [
+      "Normal"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "atk": 55,
+      "def": 75,
+      "spc": 60,
+      "spe": 30
+    },
+    "bst": 310,
+    "prevo": null,
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 109,
+    "id": "koffing",
+    "name": "Koffing",
+    "types": [
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "atk": 65,
+      "def": 95,
+      "spc": 60,
+      "spe": 35
+    },
+    "bst": 295,
+    "prevo": null,
+    "evos": [
+      "weezing"
+    ],
+    "tags": []
+  },
+  {
+    "num": 110,
+    "id": "weezing",
+    "name": "Weezing",
+    "types": [
+      "Poison"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "atk": 90,
+      "def": 120,
+      "spc": 85,
+      "spe": 60
+    },
+    "bst": 420,
+    "prevo": "koffing",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 111,
+    "id": "rhyhorn",
+    "name": "Rhyhorn",
+    "types": [
+      "Ground",
+      "Rock"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "atk": 85,
+      "def": 95,
+      "spc": 30,
+      "spe": 25
+    },
+    "bst": 315,
+    "prevo": null,
+    "evos": [
+      "rhydon"
+    ],
+    "tags": []
+  },
+  {
+    "num": 112,
+    "id": "rhydon",
+    "name": "Rhydon",
+    "types": [
+      "Ground",
+      "Rock"
+    ],
+    "baseStats": {
+      "hp": 105,
+      "atk": 130,
+      "def": 120,
+      "spc": 45,
+      "spe": 40
+    },
+    "bst": 440,
+    "prevo": "rhyhorn",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 113,
+    "id": "chansey",
+    "name": "Chansey",
+    "types": [
+      "Normal"
+    ],
+    "baseStats": {
+      "hp": 250,
+      "atk": 5,
+      "def": 5,
+      "spc": 105,
+      "spe": 50
+    },
+    "bst": 415,
+    "prevo": null,
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 114,
+    "id": "tangela",
+    "name": "Tangela",
+    "types": [
+      "Grass"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "atk": 55,
+      "def": 115,
+      "spc": 100,
+      "spe": 60
+    },
+    "bst": 395,
+    "prevo": null,
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 115,
+    "id": "kangaskhan",
+    "name": "Kangaskhan",
+    "types": [
+      "Normal"
+    ],
+    "baseStats": {
+      "hp": 105,
+      "atk": 95,
+      "def": 80,
+      "spc": 40,
+      "spe": 90
+    },
+    "bst": 410,
+    "prevo": null,
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 116,
+    "id": "horsea",
+    "name": "Horsea",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 30,
+      "atk": 40,
+      "def": 70,
+      "spc": 70,
+      "spe": 60
+    },
+    "bst": 270,
+    "prevo": null,
+    "evos": [
+      "seadra"
+    ],
+    "tags": []
+  },
+  {
+    "num": 117,
+    "id": "seadra",
+    "name": "Seadra",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "atk": 65,
+      "def": 95,
+      "spc": 95,
+      "spe": 85
+    },
+    "bst": 395,
+    "prevo": "horsea",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 118,
+    "id": "goldeen",
+    "name": "Goldeen",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 45,
+      "atk": 67,
+      "def": 60,
+      "spc": 50,
+      "spe": 63
+    },
+    "bst": 285,
+    "prevo": null,
+    "evos": [
+      "seaking"
+    ],
+    "tags": []
+  },
+  {
+    "num": 119,
+    "id": "seaking",
+    "name": "Seaking",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "atk": 92,
+      "def": 65,
+      "spc": 80,
+      "spe": 68
+    },
+    "bst": 385,
+    "prevo": "goldeen",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 120,
+    "id": "staryu",
+    "name": "Staryu",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 30,
+      "atk": 45,
+      "def": 55,
+      "spc": 70,
+      "spe": 85
+    },
+    "bst": 285,
+    "prevo": null,
+    "evos": [
+      "starmie"
+    ],
+    "tags": []
+  },
+  {
+    "num": 121,
+    "id": "starmie",
+    "name": "Starmie",
+    "types": [
+      "Water",
+      "Psychic"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "atk": 75,
+      "def": 85,
+      "spc": 100,
+      "spe": 115
+    },
+    "bst": 435,
+    "prevo": "staryu",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 122,
+    "id": "mrmime",
+    "name": "Mr. Mime",
+    "types": [
+      "Psychic"
+    ],
+    "baseStats": {
+      "hp": 40,
+      "atk": 45,
+      "def": 65,
+      "spc": 100,
+      "spe": 90
+    },
+    "bst": 340,
+    "prevo": null,
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 123,
+    "id": "scyther",
+    "name": "Scyther",
+    "types": [
+      "Bug",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "atk": 110,
+      "def": 80,
+      "spc": 55,
+      "spe": 105
+    },
+    "bst": 420,
+    "prevo": null,
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 124,
+    "id": "jynx",
+    "name": "Jynx",
+    "types": [
+      "Ice",
+      "Psychic"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "atk": 50,
+      "def": 35,
+      "spc": 95,
+      "spe": 95
+    },
+    "bst": 340,
+    "prevo": null,
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 125,
+    "id": "electabuzz",
+    "name": "Electabuzz",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "atk": 83,
+      "def": 57,
+      "spc": 85,
+      "spe": 105
+    },
+    "bst": 395,
+    "prevo": null,
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 126,
+    "id": "magmar",
+    "name": "Magmar",
+    "types": [
+      "Fire"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "atk": 95,
+      "def": 57,
+      "spc": 85,
+      "spe": 93
+    },
+    "bst": 395,
+    "prevo": null,
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 127,
+    "id": "pinsir",
+    "name": "Pinsir",
+    "types": [
+      "Bug"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "atk": 125,
+      "def": 100,
+      "spc": 55,
+      "spe": 85
+    },
+    "bst": 430,
+    "prevo": null,
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 128,
+    "id": "tauros",
+    "name": "Tauros",
+    "types": [
+      "Normal"
+    ],
+    "baseStats": {
+      "hp": 75,
+      "atk": 100,
+      "def": 95,
+      "spc": 70,
+      "spe": 110
+    },
+    "bst": 450,
+    "prevo": null,
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 129,
+    "id": "magikarp",
+    "name": "Magikarp",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 20,
+      "atk": 10,
+      "def": 55,
+      "spc": 20,
+      "spe": 80
+    },
+    "bst": 185,
+    "prevo": null,
+    "evos": [
+      "gyarados"
+    ],
+    "tags": []
+  },
+  {
+    "num": 130,
+    "id": "gyarados",
+    "name": "Gyarados",
+    "types": [
+      "Water",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 95,
+      "atk": 125,
+      "def": 79,
+      "spc": 100,
+      "spe": 81
+    },
+    "bst": 480,
+    "prevo": "magikarp",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 131,
+    "id": "lapras",
+    "name": "Lapras",
+    "types": [
+      "Water",
+      "Ice"
+    ],
+    "baseStats": {
+      "hp": 130,
+      "atk": 85,
+      "def": 80,
+      "spc": 95,
+      "spe": 60
+    },
+    "bst": 450,
+    "prevo": null,
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 132,
+    "id": "ditto",
+    "name": "Ditto",
+    "types": [
+      "Normal"
+    ],
+    "baseStats": {
+      "hp": 48,
+      "atk": 48,
+      "def": 48,
+      "spc": 48,
+      "spe": 48
+    },
+    "bst": 240,
+    "prevo": null,
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 133,
+    "id": "eevee",
+    "name": "Eevee",
+    "types": [
+      "Normal"
+    ],
+    "baseStats": {
+      "hp": 55,
+      "atk": 55,
+      "def": 50,
+      "spc": 65,
+      "spe": 55
+    },
+    "bst": 280,
+    "prevo": null,
+    "evos": [
+      "vaporeon",
+      "jolteon",
+      "flareon"
+    ],
+    "tags": []
+  },
+  {
+    "num": 134,
+    "id": "vaporeon",
+    "name": "Vaporeon",
+    "types": [
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 130,
+      "atk": 65,
+      "def": 60,
+      "spc": 110,
+      "spe": 65
+    },
+    "bst": 430,
+    "prevo": "eevee",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 135,
+    "id": "jolteon",
+    "name": "Jolteon",
+    "types": [
+      "Electric"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "atk": 65,
+      "def": 60,
+      "spc": 110,
+      "spe": 130
+    },
+    "bst": 430,
+    "prevo": "eevee",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 136,
+    "id": "flareon",
+    "name": "Flareon",
+    "types": [
+      "Fire"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "atk": 130,
+      "def": 60,
+      "spc": 110,
+      "spe": 65
+    },
+    "bst": 430,
+    "prevo": "eevee",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 137,
+    "id": "porygon",
+    "name": "Porygon",
+    "types": [
+      "Normal"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "atk": 60,
+      "def": 70,
+      "spc": 75,
+      "spe": 40
+    },
+    "bst": 310,
+    "prevo": null,
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 138,
+    "id": "omanyte",
+    "name": "Omanyte",
+    "types": [
+      "Rock",
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 35,
+      "atk": 40,
+      "def": 100,
+      "spc": 90,
+      "spe": 35
+    },
+    "bst": 300,
+    "prevo": null,
+    "evos": [
+      "omastar"
+    ],
+    "tags": []
+  },
+  {
+    "num": 139,
+    "id": "omastar",
+    "name": "Omastar",
+    "types": [
+      "Rock",
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 70,
+      "atk": 60,
+      "def": 125,
+      "spc": 115,
+      "spe": 55
+    },
+    "bst": 425,
+    "prevo": "omanyte",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 140,
+    "id": "kabuto",
+    "name": "Kabuto",
+    "types": [
+      "Rock",
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 30,
+      "atk": 80,
+      "def": 90,
+      "spc": 45,
+      "spe": 55
+    },
+    "bst": 300,
+    "prevo": null,
+    "evos": [
+      "kabutops"
+    ],
+    "tags": []
+  },
+  {
+    "num": 141,
+    "id": "kabutops",
+    "name": "Kabutops",
+    "types": [
+      "Rock",
+      "Water"
+    ],
+    "baseStats": {
+      "hp": 60,
+      "atk": 115,
+      "def": 105,
+      "spc": 70,
+      "spe": 80
+    },
+    "bst": 430,
+    "prevo": "kabuto",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 142,
+    "id": "aerodactyl",
+    "name": "Aerodactyl",
+    "types": [
+      "Rock",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 80,
+      "atk": 105,
+      "def": 65,
+      "spc": 60,
+      "spe": 130
+    },
+    "bst": 440,
+    "prevo": null,
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 143,
+    "id": "snorlax",
+    "name": "Snorlax",
+    "types": [
+      "Normal"
+    ],
+    "baseStats": {
+      "hp": 160,
+      "atk": 110,
+      "def": 65,
+      "spc": 65,
+      "spe": 30
+    },
+    "bst": 430,
+    "prevo": null,
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 144,
+    "id": "articuno",
+    "name": "Articuno",
+    "types": [
+      "Ice",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "atk": 85,
+      "def": 100,
+      "spc": 125,
+      "spe": 85
+    },
+    "bst": 485,
+    "prevo": null,
+    "evos": [],
+    "tags": [
+      "Sub-Legendary"
+    ]
+  },
+  {
+    "num": 145,
+    "id": "zapdos",
+    "name": "Zapdos",
+    "types": [
+      "Electric",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "atk": 90,
+      "def": 85,
+      "spc": 125,
+      "spe": 100
+    },
+    "bst": 490,
+    "prevo": null,
+    "evos": [],
+    "tags": [
+      "Sub-Legendary"
+    ]
+  },
+  {
+    "num": 146,
+    "id": "moltres",
+    "name": "Moltres",
+    "types": [
+      "Fire",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 90,
+      "atk": 100,
+      "def": 90,
+      "spc": 125,
+      "spe": 90
+    },
+    "bst": 495,
+    "prevo": null,
+    "evos": [],
+    "tags": [
+      "Sub-Legendary"
+    ]
+  },
+  {
+    "num": 147,
+    "id": "dratini",
+    "name": "Dratini",
+    "types": [
+      "Dragon"
+    ],
+    "baseStats": {
+      "hp": 41,
+      "atk": 64,
+      "def": 45,
+      "spc": 50,
+      "spe": 50
+    },
+    "bst": 250,
+    "prevo": null,
+    "evos": [
+      "dragonair"
+    ],
+    "tags": []
+  },
+  {
+    "num": 148,
+    "id": "dragonair",
+    "name": "Dragonair",
+    "types": [
+      "Dragon"
+    ],
+    "baseStats": {
+      "hp": 61,
+      "atk": 84,
+      "def": 65,
+      "spc": 70,
+      "spe": 70
+    },
+    "bst": 350,
+    "prevo": "dratini",
+    "evos": [
+      "dragonite"
+    ],
+    "tags": []
+  },
+  {
+    "num": 149,
+    "id": "dragonite",
+    "name": "Dragonite",
+    "types": [
+      "Dragon",
+      "Flying"
+    ],
+    "baseStats": {
+      "hp": 91,
+      "atk": 134,
+      "def": 95,
+      "spc": 100,
+      "spe": 80
+    },
+    "bst": 500,
+    "prevo": "dragonair",
+    "evos": [],
+    "tags": []
+  },
+  {
+    "num": 150,
+    "id": "mewtwo",
+    "name": "Mewtwo",
+    "types": [
+      "Psychic"
+    ],
+    "baseStats": {
+      "hp": 106,
+      "atk": 110,
+      "def": 90,
+      "spc": 154,
+      "spe": 130
+    },
+    "bst": 590,
+    "prevo": null,
+    "evos": [],
+    "tags": [
+      "Restricted Legendary"
+    ]
+  },
+  {
+    "num": 151,
+    "id": "mew",
+    "name": "Mew",
+    "types": [
+      "Psychic"
+    ],
+    "baseStats": {
+      "hp": 100,
+      "atk": 100,
+      "def": 100,
+      "spc": 100,
+      "spe": 100
+    },
+    "bst": 500,
+    "prevo": null,
+    "evos": [],
+    "tags": [
+      "Mythical"
+    ]
+  }
+]
